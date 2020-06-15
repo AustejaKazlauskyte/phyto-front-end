@@ -4,21 +4,42 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <img className="wave" src="wave.png"/>
+        <div className="container">
+          <div className="img">
+            {/*<img src="plants.svg"/>*/}
+            <img src="standing-11.svg"/>
+          </div>
+          <div className="login-content">
+            <form action="index.html">
+              <div className="avatar-transform">
+              <img src="Curly.svg"/>
+              </div>
+                <h2 className="title">Welcome</h2>
+                <div className="input-div one">
+                  <div className="i">
+                    <i className="fas fa-user"></i>
+                  </div>
+                  <div className="div">
+                    <h5>Username</h5>
+                    <input type="text" className="input"/>
+                  </div>
+                </div>
+                <div className="input-div pass">
+                  <div className="i">
+                    <i className="fas fa-lock"></i>
+                  </div>
+                  <div className="div">
+                    <h5>Password</h5>
+                    <input type="password" className="input"/>
+                  </div>
+                </div>
+                <a href="#">Forgot Password?</a>
+                <input type="submit" className="btn" value="Login"/>
+            </form>
+          </div>
+        </div>
     </div>
   );
 }
