@@ -1,3 +1,5 @@
+/* ------------ GENERAL STYLES ------------*/
+
 *{
   padding: 0;
   margin: 0;
@@ -9,6 +11,23 @@ body{
   overflow: hidden;
 }
 
+/* ------------ MENU STYLES ------------*/
+.menu-display{
+  display: flex;
+  float: right;
+
+}
+
+.menu-item{
+  list-style-type: none;
+  margin: 15px 30px auto auto;
+  padding: 10px;
+  border-bottom: solid 1px #38d39f;
+
+}
+
+
+/* ------------ LOGIN STYLES ------------*/
 .wave{
   position: fixed;
   bottom: 0;
@@ -21,7 +40,7 @@ body{
   height: 100vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap :7rem;
+  grid-gap: 7rem;
   padding: 0 2rem;
 }
 
