@@ -12,6 +12,7 @@ body{
 }
 
 /* ------------ MENU STYLES ------------*/
+
 .menu-display{
   display: flex;
   float: right;
@@ -25,7 +26,6 @@ body{
   border-bottom: solid 1px #38d39f;
 
 }
-
 
 /* ------------ LOGIN STYLES ------------*/
 .wave{
