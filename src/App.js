@@ -25,7 +25,7 @@ export default function App() {
                             <Link to="/about">Apie Phyto</Link>
                         </li>
                         <li className="menu-item">
-                            <Link to="/herb-database">Vaistažolių duomenų bazė</Link>
+                            <Link to="/api/herbs">Vaistažolių duomenų bazė</Link>
                         </li>
                     </ul>
                 </nav>
@@ -36,7 +36,7 @@ export default function App() {
                     <Route path="/about">
                         <About/>
                     </Route>
-                    <Route path="/herb-database">
+                    <Route path="/api/herbs">
                         <HerbDatabase/>
                     </Route>
                     <Route path="/">
