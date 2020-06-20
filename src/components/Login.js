@@ -3,16 +3,16 @@ import React from "react"
 function Login() {
     return(
         <div>
-            <img className="wave" src="wave.png"/>
+            <img className="wave" src="images/wave.png"/>
             <div className="container">
                 <div className="img">
                     {/*<img src="plants.svg"/>*/}
-                    <img src="standing-11.svg"/>
+                    <img src="images/standing-11.svg"/>
                 </div>
                 <div className="login-content">
                     <form action="index.html">
                         <div className="avatar-transform">
-                            <img src="Curly.svg"/>
+                            <img src="images/Curly.svg"/>
                         </div>
                         <h2 className="title">Sveiki užsukę</h2>
                         <div className="input-div one">

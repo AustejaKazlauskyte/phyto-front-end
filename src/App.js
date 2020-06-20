@@ -1,16 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Login from "./Login";
-import Menu from "./Menu";
+import Login from "./components/Login";
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     Link
 } from "react-router-dom";
-import HerbDatabase from "./HerbDatabase";
-import About from "./About";
+import HerbDatabase from "./components/HerbDatabase";
+import About from "./components/About";
 
 export default function App() {
     return (
