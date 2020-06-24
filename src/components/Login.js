@@ -1,44 +1,16 @@
 import React from "react"
 
 function Login() {
-    return(
-        <div>
-            <img className="wave" src="images/wave.png"/>
-            <div className="container">
-                <div className="img">
-                    {/*<img src="plants.svg"/>*/}
-                    <img src="images/standing-11.svg"/>
-                </div>
-                <div className="login-content">
-                    <form action="index.html">
-                        <div className="avatar-transform">
-                            <img src="images/Curly.svg"/>
-                        </div>
-                        <h2 className="title">Sveiki užsukę</h2>
-                        <div className="input-div one">
-                            <div className="i">
-                                <i className="fas fa-user"></i>
-                            </div>
-                            <div className="div">
-                                <h5>Prisijungimo vardas</h5>
-                                <input type="text" className="input"/>
-                            </div>
-                        </div>
-                        <div className="input-div pass">
-                            <div className="i">
-                                <i className="fas fa-lock"></i>
-                            </div>
-                            <div className="div">
-                                <h5>Slaptažodis</h5>
-                                <input type="password" className="input"/>
-                            </div>
-                        </div>
-                        <a href="#">Pamiršote slaptažodį?</a>
-                        <input type="submit" className="btn" value="Prisijunkite"/>
-                    </form>
-                </div>
-            </div>
-        </div>
+    return (
+        <form>
+            <img src="images/Curly.svg" className="avatar-img"/>
+            <label><h3>Sveiki užsukę</h3></label>
+            <label>Prisijungimo vardas</label>
+            <input className="u-full-width" type="text" placeholder="pavyzdžiui, Jonas"/>
+            <label>Elektroninio pašto adresas</label>
+            <input className="u-full-width" type="email" placeholder="tavo@pastodezute.lt"/>
+            <input className="button-primary" type="submit" value="Prisijungti"/>
+        </form>
     )
 }
 
