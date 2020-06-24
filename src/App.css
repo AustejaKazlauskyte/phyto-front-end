@@ -1,3 +1,36 @@
-.avatar-img {
-    transform: rotateY(180deg);
+
+
+/* ------------ GENERAL STYLES ------------*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+}
+/* ------------ LOGIN STYLES ------------*/
+.login-image {
+    max-width: 80%;
+    height: auto;
+    /*border: 2px red solid;*/
+    margin: 20% auto 20% auto;
+
+}
+
+/* ------------ MENU STYLES ------------*/
+
+.menu-display {
+    display: flex;
+    float: right;
+
+}
+
+.menu-item {
+    list-style-type: none;
+    margin: 15px 30px auto auto;
+    padding: 10px;
+    border-bottom: solid 1px #38d39f;
+    color: black;
+    text-decoration-color: black;
+    a: black;
 }

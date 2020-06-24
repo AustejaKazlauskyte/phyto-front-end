@@ -1,16 +1,21 @@
 import React from "react"
+import LoginForm from "./LoginForm";
 
 function Login() {
     return (
-        <form>
-            <img src="images/Curly.svg" className="avatar-img"/>
-            <label><h3>Sveiki užsukę</h3></label>
-            <label>Prisijungimo vardas</label>
-            <input className="u-full-width" type="text" placeholder="pavyzdžiui, Jonas"/>
-            <label>Elektroninio pašto adresas</label>
-            <input className="u-full-width" type="email" placeholder="tavo@pastodezute.lt"/>
-            <input className="button-primary" type="submit" value="Prisijungti"/>
-        </form>
+        <div className="container">
+            <div className="row">
+                <div className="six columns">
+                    <img alt="login image"
+                         src="/images/phyto-mergina-su-svarku.png"
+                         className="login-image"
+                    />
+                </div>
+                <div className="six columns">
+                    <LoginForm/>
+                </div>
+            </div>
+        </div>
     )
 }
 
