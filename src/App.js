@@ -1,47 +1,44 @@
 import React from 'react';
 import './App.css';
 import Login from "./components/Login";
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import HerbDatabase from "./components/HerbDatabase";
 import About from "./components/About";
 
 export default function App() {
     return (
         <Router>
-            <div>
-                <nav>
-                    <ul className="menu-display">
-                        <li className="menu-item">
-                            <Link to="/">Prisijungti</Link>
+            <div className="container">
+                <nav className="navbar">
+                    <ul className="navbar-list">
+                        <li className="navbar-item">
+                            <a className="navbar-link" href="/">Prisijungti</a>
                         </li>
-                        <li className="menu-item">
-                            <Link to="/about">Apie Phyto</Link>
+                        <li className="navbar-item">
+                            <a className="navbar-link" href="/about">Apie Phyto</a>
                         </li>
-                        <li className="menu-item">
-                            <Link to="/api/herbs">Vaistažolių duomenų bazė</Link>
+                        <li className="navbar-item">
+                            <a className="navbar-link" href="/api/herbs">Vaistažolių duomenų bazė</a>
                         </li>
                     </ul>
                 </nav>
-
-                {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-                <Switch>
-                    <Route path="/about">
-                        <About/>
-                    </Route>
-                    <Route path="/api/herbs">
-                        <HerbDatabase/>
-                    </Route>
-                    <Route path="/">
-                        <Login/>
-                    </Route>
-                </Switch>
             </div>
+
+
+            {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+            <Switch>
+                <Route path="/about">
+                    <About/>
+                </Route>
+                <Route path="/api/herbs">
+                    <HerbDatabase/>
+                </Route>
+                <Route path="/">
+                    <Login/>
+                </Route>
+            </Switch>
+
         </Router>
     );
 }

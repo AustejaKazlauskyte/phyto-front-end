@@ -34,7 +34,10 @@
   max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  /*  my customized style  */
+  border: 2px solid red;
+}
 .column,
 .columns {
   width: 100%;
