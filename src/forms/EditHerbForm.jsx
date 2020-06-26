@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 
 const EditHerbForm = (props) => {
 
-    // naudojam hooks
+    // naudojam hooks. UseEffect funkcija padaro kad turėtumėm editinamos herb tesktą laukeliuose
 
     useEffect(() => {
         setHerb(props.currentHerb)
@@ -13,7 +13,6 @@ const EditHerbForm = (props) => {
     const handleChange = e => {
         const {name, value} = e.target;
         setHerb({...herb, [name]: value});
-        console.log("IVYKO PASPAUDIMAS");
     }
 
     const handleSubmit = e => {
