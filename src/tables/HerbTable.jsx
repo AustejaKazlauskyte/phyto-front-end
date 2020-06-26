@@ -20,7 +20,7 @@ const HerbTable = (props) => {
                             <td>{name}</td>
                             <td>
                                 <button onClick={() => props.deleteHerb(id)}>Ištrinti</button>
-                                <button>Redaguoti</button>
+                                <button onClick={() => props.editHerb(id, herb)}>Redaguoti</button>
                             </td>
                         </tr>
                     )

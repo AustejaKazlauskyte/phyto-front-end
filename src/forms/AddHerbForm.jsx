@@ -19,7 +19,7 @@ const AddHerbForm = (props) => {
     return (
         <form>
             <label>Pavadinimas</label>
-            <input className="u-full-width" type="text" name='name' value={herb.name} onChange={handleChange}/>
+            <input className="u-full-width" type="text" name="name" value={herb.name} onChange={handleChange}/>
             <button className="button-primary" type="submit" onClick={handleSubmit}>Pridėti vaistažolę</button>
         </form>
     )

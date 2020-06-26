@@ -1,8 +1,8 @@
 import React, {useState} from "react"
-import herbList from "./Data";
-import HerbTable from "./HerbTable";
-import AddHerbForm from "./AddHerbForm";
-import EditHerbForm from "./EditHerbForm";
+import herbList from "./Data.js";
+import HerbTable from "../tables/HerbTable";
+import AddHerbForm from "../forms/AddHerbForm";
+import EditHerbForm from "../forms/EditHerbForm";
 
 const HerbDatabase = () => {
 
@@ -32,10 +32,9 @@ const HerbDatabase = () => {
 
     return (
         <div className="container">
-            <h1>Vaistažolių duomenų bazė</h1>
             <div className="row">
                 <div className="five columns">
-                    {editing ? (
+                    { editing ? (
                         <div>
                             <h2>Redaguoti vaistažolę</h2>
                             <EditHerbForm
@@ -53,12 +52,12 @@ const HerbDatabase = () => {
                 </div>
                 <div className="seven columns">
                     <h2>Peržiūrėti visas vaistažoles</h2>
-                    <HerbTable herbs={herbs} deleteHerb={deleteHerb} editHerb={editHerb}/>
+                    <HerbTable herbs={herbs} deleteHerb={deleteHerb} editHerb={editHerb} />
                 </div>
             </div>
         </div>
     )
 }
 
-export default HerbDatabase;
+export default HerbDatabase
 

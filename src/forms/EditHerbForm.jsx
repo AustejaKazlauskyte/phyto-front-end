@@ -11,10 +11,9 @@ const EditHerbForm = (props) => {
     const [herb, setHerb] = useState(props.currentHerb);
 
     const handleChange = e => {
-        console.log(e.target.name);
-        console.log(e.target.value);
-        const {name: name, value} = e.target;
+        const {name, value} = e.target;
         setHerb({...herb, [name]: value});
+        console.log("IVYKO PASPAUDIMAS");
     }
 
     const handleSubmit = e => {
