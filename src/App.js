@@ -33,6 +33,8 @@ export default function App() {
                 </Route>
                 <Route path="/api/herbs">
                     <HerbDatabase/>
+                   {/* <FetchWithDidMount/>
+                    <TestAPI/>*/}
                 </Route>
                 <Route path="/">
                     <Login/>

@@ -13,7 +13,6 @@ body {
     height: auto;
     border: 2px red solid;
     margin: 20% auto 0px auto;
-
 }
 
 /* ------------ MENU STYLES ------------*/
@@ -44,7 +43,6 @@ body {
         top: 0;
         left: 0;
     }
-
 }
 
 @media (min-width: 750px) {

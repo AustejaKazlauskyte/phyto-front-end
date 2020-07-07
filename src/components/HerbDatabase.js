@@ -1,12 +1,26 @@
 import React, {useState} from "react"
-import herbList from "./Data.js";
 import HerbTable from "../tables/HerbTable";
 import AddHerbForm from "../forms/AddHerbForm";
 import EditHerbForm from "../forms/EditHerbForm";
 
 const HerbDatabase = () => {
 
-    const [herbs, setHerbs] = useState(herbList);
+    const BASE_URL = "http://localhost:8080/api/herbs";
+
+    const [herbs, setHerbs] = React.useState([]);
+
+    React.useEffect(() => {
+        fetch(BASE_URL)
+            .then(res => res.json())
+            .then(herbs => {
+                /*console.log(herbs)*/
+                setHerbs(herbs);
+            })
+
+    }, [])
+
+
+    /*const [herbs, setHerbs] = useState(herbList);*/
 
     const addHerb = herb => {
         herb.id = herbs.length + 1;
@@ -34,7 +48,7 @@ const HerbDatabase = () => {
         <div className="container">
             <div className="row">
                 <div className="five columns">
-                    { editing ? (
+                    {editing ? (
                         <div>
                             <h2>Redaguoti vaistažolę</h2>
                             <EditHerbForm
@@ -52,7 +66,7 @@ const HerbDatabase = () => {
                 </div>
                 <div className="seven columns">
                     <h2>Peržiūrėti visas vaistažoles</h2>
-                    <HerbTable herbs={herbs} deleteHerb={deleteHerb} editHerb={editHerb} />
+                    <HerbTable herbs={herbs} deleteHerb={deleteHerb} editHerb={editHerb}/>
                 </div>
             </div>
         </div>
@@ -60,4 +74,3 @@ const HerbDatabase = () => {
 }
 
 export default HerbDatabase
-

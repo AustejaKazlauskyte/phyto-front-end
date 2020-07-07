@@ -21,13 +21,14 @@ const HerbTable = (props) => {
                             <td>
                                 <button onClick={() => props.deleteHerb(id)}>Ištrinti</button>
                                 <button onClick={() => props.editHerb(id, herb)}>Redaguoti</button>
+                                <button>Išskleisti</button>
                             </td>
                         </tr>
                     )
                 })
             ) : (
                 <tr>
-                    <td colSpan={3}>No herbs found</td>
+                    <td colSpan={3}>Vaistažolių sąrašas tuščias</td>
                 </tr>
             )
             }
