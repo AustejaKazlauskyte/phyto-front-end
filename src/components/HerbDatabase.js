@@ -2,8 +2,16 @@ import React, {useState} from "react"
 import HerbTable from "../tables/HerbTable";
 import AddHerbForm from "../forms/AddHerbForm";
 import EditHerbForm from "../forms/EditHerbForm";
+import {useAuth} from "../context/auth";
+
 
 const HerbDatabase = () => {
+    const {setToken} = useAuth();
+
+    function logOut(event) {
+
+        setToken(null);
+    }
 
     const BASE_URL = "http://localhost:8080/api/herbs";
 
@@ -13,14 +21,10 @@ const HerbDatabase = () => {
         fetch(BASE_URL)
             .then(res => res.json())
             .then(herbs => {
-                /*console.log(herbs)*/
                 setHerbs(herbs);
             })
 
     }, [])
-
-
-    /*const [herbs, setHerbs] = useState(herbList);*/
 
     const addHerb = herb => {
         herb.id = herbs.length + 1;
@@ -46,6 +50,9 @@ const HerbDatabase = () => {
 
     return (
         <div className="container">
+            <div>
+                <button className="button-primary" onClick={logOut}>Atsijungti</button>
+            </div>
             <div className="row">
                 <div className="five columns">
                     {editing ? (
@@ -74,3 +81,5 @@ const HerbDatabase = () => {
 }
 
 export default HerbDatabase
+
+//grizti prie session storage, atsijungti mygtuko ar daro full page reload, prevent deafult jeigu taip yra, jegu jis padeda i s tokena nuli

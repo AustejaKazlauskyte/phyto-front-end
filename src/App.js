@@ -1,16 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Login from "./components/Login";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import HerbDatabase from "./components/HerbDatabase";
 import About from "./components/About";
 import Registration from "./components/Registration";
-import {AuthContext} from "./context/auth";
+import {AuthProvider} from "./context/auth";
 import PrivateRoute from "./PrivateRoute";
 
-export default function App() {
+function App(props) {
+
     return (
-        <AuthContext.Provider value={false}>
+        <AuthProvider>
             <Router>
                 <div className="container">
                     <nav className="navbar">
@@ -45,8 +46,10 @@ export default function App() {
                     </Route>
                 </Switch>
             </Router>
-        </AuthContext.Provider>
+        </AuthProvider>
     );
 }
+
+export default App;
 /*        <Route exact path="/" component={Home} />
           <PrivateRoute path="/admin" component={Admin} />*/
