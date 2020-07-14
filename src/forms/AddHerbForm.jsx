@@ -11,6 +11,7 @@ const AddHerbForm = (props) => {
 
     const [herb, setHerb] = useState(initHerb);
 
+/*
 
     const handleChange = ({target: {name, value}}) => {
         setHerb({...herb, [name]: value});
@@ -19,11 +20,10 @@ const AddHerbForm = (props) => {
     const handleChangeCheckbox = ({target: {name, checked}}) => {
         setHerb({...herb, [name]: checked});
     }
-
-
-    /* const handleChange = ({target: {name, value, type, checked}}) => setHerb(prevState => ({
+*/
+     const handleChange = ({target: {name, value, type, checked}}) => setHerb(prevState => ({
          ...prevState, [name]: (type === 'checkbox' ? checked : value)
-     }));*/
+     }));
 
     const handleSubmit = e => {
         e.preventDefault();
