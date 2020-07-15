@@ -3,6 +3,7 @@ import HerbTable from "../tables/HerbTable";
 import AddHerbForm from "../forms/AddHerbForm";
 import EditHerbForm from "../forms/EditHerbForm";
 import {useAuth} from "../context/auth";
+import herbList from "./Data";
 
 
 const HerbDatabase = () => {
@@ -13,11 +14,13 @@ const HerbDatabase = () => {
         setToken(null);
     }
 
-    const BASE_URL = "http://localhost:8080/api/herbs";
+    const [herbs, setHerbs] = useState(herbList);
 
-    const [herbs, setHerbs] = React.useState([]);
+    /*const BASE_URL = "http://localhost:8080/api/herbs";
+*/
+   /* const [herbs, setHerbs] = React.useState([]);*/
 
-    React.useEffect(() => {
+   /* React.useEffect(() => {
         fetch(BASE_URL)
             .then(res => res.json())
             .then(herbs => {
@@ -25,7 +28,7 @@ const HerbDatabase = () => {
             })
 
     }, [])
-
+*/
     const addHerb = herb => {
         herb.id = herbs.length + 1;
         setHerbs([...herbs, herb]);
