@@ -1,38 +1,121 @@
-.App {
-  text-align: center;
+/* ------------ GENERAL STYLES ------------*/
+* {
+    box-sizing: border-box;
+}
+/*
+body {
+    overflow: hidden;
+}*/
+
+/* ------------ LOGIN STYLES ------------*/
+.login-image {
+    max-width: 80%;
+    height: auto;
+    border: 2px red solid;
+    margin: 20% auto 0px auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* ------------ MENU STYLES ------------*/
+
+/*
+.menu-display {
+    display: flex;
+    float: right;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.menu-item {
+    list-style-type: none;
+    margin: 15px 30px auto auto;
+    padding: 10px;
+    border-bottom: solid 1px #38d39f;
+    color: black;
+    text-decoration-color: black;
+    a: black;
+}
+*/
+
+/* ------------ ICON STYLES ------------*/
+
+i {
+    margin: 10%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* ------------ NAVBAR STYLES ------------*/
+
+@media (min-width: 750px) {
+    .has-docked-nav .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
 }
 
-.App-link {
-  color: #61dafb;
+@media (min-width: 750px) {
+    .navbar, .navbar-spacer {
+        display: block;
+        width: 100%;
+        height: 6.5rem;
+        background: #fff;
+        z-index: 99;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+    }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+    font-size: 1.5em;
+    line-height: 1.6;
+    font-weight: 400;
+    font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #222;
+}
+
+/* ------------ NAVBAR ITEM ------------*/
+
+@media (min-width: 750px) {
+    .navbar-item {
+        position: relative;
+        float: left;
+        margin-bottom: 0;
+    }
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+@media (min-width: 750px) {
+    .navbar-list {
+        list-style: none;
+        margin-bottom: 0;
+    }
+}
+
+
+body {
+    font-size: 1.5em;
+    line-height: 1.6;
+    font-weight: 400;
+    font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #222;
+}
+/* ------------ NAVBAR LINK ------------*/
+
+@media (min-width: 750px) {
+    .navbar-link {
+        text-transform: uppercase;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: .2rem;
+        margin-right: 35px;
+        text-decoration: none;
+        line-height: 6.5rem;
+        color: #222;
+    }
+}
+
+a {
+    background-color: transparent;
 }

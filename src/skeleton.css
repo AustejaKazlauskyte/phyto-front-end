@@ -34,10 +34,7 @@
   max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
-  box-sizing: border-box;
-  /*  my customized style  */
-  border: 2px solid red;
-}
+  box-sizing: border-box; }
 .column,
 .columns {
   width: 100%;
@@ -161,9 +158,9 @@ p {
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
-  color: #38d39f; }
+  color: #1EAEDB; }
 a:hover {
-  color: #32be8f; }
+  color: #0FA0CE; }
 
 
 /* Buttons
@@ -209,8 +206,8 @@ input[type="submit"].button-primary,
 input[type="reset"].button-primary,
 input[type="button"].button-primary {
   color: #FFF;
-  background-color: #38d39f;
-  border-color: #38d39f; }
+  background-color: #33C3F0;
+  border-color: #33C3F0; }
 .button.button-primary:hover,
 button.button-primary:hover,
 input[type="submit"].button-primary:hover,
@@ -222,8 +219,8 @@ input[type="submit"].button-primary:focus,
 input[type="reset"].button-primary:focus,
 input[type="button"].button-primary:focus {
   color: #FFF;
-  background-color: #32be8f;
-  border-color: #32be8f; }
+  background-color: #1EAEDB;
+  border-color: #1EAEDB; }
 
 
 /* Forms
@@ -269,7 +266,7 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 textarea:focus,
 select:focus {
-  border: 1px solid #32be8f;
+  border: 1px solid #33C3F0;
   outline: 0; }
 label,
 legend {
