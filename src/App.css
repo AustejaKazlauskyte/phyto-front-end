@@ -35,6 +35,12 @@ body {
 }
 */
 
+/* ------------ ICON STYLES ------------*/
+
+i {
+    margin: 10%;
+}
+
 /* ------------ NAVBAR STYLES ------------*/
 
 @media (min-width: 750px) {

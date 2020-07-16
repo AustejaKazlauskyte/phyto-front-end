@@ -73,6 +73,6 @@ const AddHerbForm = (props) => {
         </form>
     )
 }
-// kodel veikia checkboxas su value property, o ne su checked? ar del to kad funkcinis komponentas?
+
 
 export default AddHerbForm;

@@ -19,16 +19,17 @@ const HerbTable = (props) => {
                             <td>{id}</td>
                             <td>{name}</td>
                             <td>
-                                <button onClick={() => props.deleteHerb(id)}>Ištrinti</button>
-                                <button onClick={() => props.editHerb(id, herb)}>Redaguoti</button>
-                                <button>Išskleisti</button>
+                                <i onClick={() => props.viewExtendedHerbs(herb)} className="far fa-eye"></i>
+                                <i onClick={() => props.editHerb(id, herb)} className="far fa-edit"></i>
+                                <i onClick={() => props.deleteHerb(id)} className=" fas fa-trash"></i>
                             </td>
                         </tr>
                     )
                 })
             ) : (
                 <tr>
-                    <td colSpan={3}>Vaistažolių sąrašas tuščias</td>
+                    {<td colSpan={3}>Vaistažolių sąrašas tuščias</td>}
+
                 </tr>
             )
             }
