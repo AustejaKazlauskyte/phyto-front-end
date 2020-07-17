@@ -1,8 +1,8 @@
-import React, {useState} from "react";
-import {Redirect} from "react-router-dom";
+import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
 import axios from "axios";
-import {useAuth} from "../context/auth";
 
+import { useAuth } from "hooks/Auth";
 
 function LoginForm(props) {
 
@@ -32,9 +32,8 @@ function LoginForm(props) {
         /*console.log("login")*/
     }
 
-
     return (
-        isAuthenticated() ? (<Redirect to="/api/herbs"/>) : (
+        isAuthenticated() ? (<Redirect to="/api/herbs" />) : (
             <div className="container" style={{margin: "50% auto 20%"}}>
                 <form>
                     <label><h3>Sveiki užsukę</h3></label>
@@ -46,7 +45,7 @@ function LoginForm(props) {
                         onChange={e => {
                             setEmail(e.target.value);
                         }}
-                        placeholder="pvz., jonas@pastodezute.lt"/>
+                        placeholder="pvz., jonas@pastodezute.lt" />
                     <label>Slaptažodis</label>
                     <input
                         className="u-full-width"
@@ -54,7 +53,7 @@ function LoginForm(props) {
                         onChange={e => {
                             setPassword(e.target.value);
                         }}
-                        placeholder="slaptažodis"/>
+                        placeholder="slaptažodis" />
                     <button
                         className="button-primary"
                         onClick={postLogin}>Prisijungti

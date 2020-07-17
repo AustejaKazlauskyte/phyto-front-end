@@ -1,4 +1,4 @@
-import React, {createContext, useContext, useState} from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
 export const AuthContext = createContext();
 
@@ -8,21 +8,21 @@ const AuthProvider = ({children}) => {
     const [token, storeToken] = useState();
 
     const isAuthenticated = () => {
-       /* if (!token) {
-            const sessionToken = localStorage.getItem('token');
-            if (sessionToken) {
-                storeToken(sessionToken);
-            }*/
-      /*  }*/
-        console.log(5,!!token)
+        /* if (!token) {
+             const sessionToken = localStorage.getItem('token');
+             if (sessionToken) {
+                 storeToken(sessionToken);
+             }*/
+        /*  }*/
+        console.log(5, !!token)
         return !!token;
     };
 
     const setToken = token => {
-       /* if (token) {*/
-            localStorage.removeItem('token', token);
-       /* }*/
-        console.log(4.5,token)
+        /* if (token) {*/
+        localStorage.removeItem('token', token);
+        /* }*/
+        console.log(4.5, token)
 
         storeToken(token)
 
@@ -36,8 +36,7 @@ const AuthProvider = ({children}) => {
 
 }
 
-
 /*export function useAuth() {
     return useContext(AuthContext);
 }*/
-export {AuthProvider, useAuth};
+export { AuthProvider, useAuth };

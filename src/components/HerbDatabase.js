@@ -2,7 +2,7 @@ import React, {useState} from "react"
 import HerbTable from "../tables/HerbTable";
 import AddHerbForm from "../forms/AddHerbForm";
 import EditHerbForm from "../forms/EditHerbForm";
-import {useAuth} from "../context/auth";
+import {useAuth} from "hooks/Auth/Auth";
 import herbList from "./Data";
 import ExtendedHerbTable from "../tables/ExtendedHerbTable";
 

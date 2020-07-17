@@ -1,4 +1,5 @@
 import React from "react"
+
 import RegistrationForm from "./RegistrationForm";
 
 function Registration() {
@@ -6,7 +7,7 @@ function Registration() {
         <div className="container">
             <div className="row">
                 <div className="six columns">
-                    <img alt="login image"
+                    <img alt="registration"
                          src="/images/phyto-mergina-su-svarku.png"
                          className="login-image"
                     />

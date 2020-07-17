@@ -1,12 +1,13 @@
 import React from "react"
-import LoginForm from "./LoginForm";
+
+import { LoginForm } from "containers/LoginForm";
 
 function Login() {
     return (
         <div className="container">
             <div className="row">
                 <div className="six columns">
-                    <img alt="login image"
+                    <img alt="login"
                          src="/images/phyto-mergina-su-svarku.png"
                          className="login-image"
                     />

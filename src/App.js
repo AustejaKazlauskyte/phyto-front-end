@@ -1,11 +1,12 @@
-import React, {useState} from 'react';
+import React from 'react';
+
 import './App.css';
-import Login from "./components/Login";
+import { About } from 'pages/About';
+import { Login } from 'pages/Login';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import HerbDatabase from "./components/HerbDatabase";
-import About from "./components/About";
 import Registration from "./components/Registration";
-import {AuthProvider} from "./context/auth";
+import {AuthProvider} from "hooks/Auth";
 import PrivateRoute from "./PrivateRoute";
 
 function App(props) {
