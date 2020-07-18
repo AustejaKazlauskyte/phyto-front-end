@@ -46,9 +46,9 @@ const AddHerbForm = (props) => {
 
     function postData(event) {
         event.preventDefault();
-        axios.post("http://localhost:8080/api/herbs"), {
+        axios.post("http://localhost:8080/api/herbs", {
             herb
-        }.then(result => {
+        }).then(result => {
             if (result.status === 200) {
 
             } else {
