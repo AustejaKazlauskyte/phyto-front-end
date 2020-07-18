@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 
+import { useAuth } from "hooks/Auth";
+
 const AddHerbForm = (props) => {
 
     const initHerb = {
@@ -12,6 +14,7 @@ const AddHerbForm = (props) => {
 
     const [herb, setHerb] = useState(initHerb);
     const [isError, setIsError] = useState(false);
+    const {isAuthenticated, setToken} = useAuth();
 
     /*
 
@@ -50,7 +53,7 @@ const AddHerbForm = (props) => {
             herb
         }).then(result => {
             if (result.status === 200) {
-
+                setToken(result.data.token);
             } else {
                 setIsError(true);
             }
