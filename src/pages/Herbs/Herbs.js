@@ -6,13 +6,12 @@ import herbList from "../../Data";
 import ExtendedHerbTable from "../../tables/ExtendedHerbTable";
 
 const Herbs = () => {
-    const [herbs, setHerbs] = useState(herbList);
+    /*const [herbs, setHerbs] = useState(herbs);*/
 
-    /*const BASE_URL = "http://localhost:8080/api/herbs";
-*/
-    /* const [herbs, setHerbs] = React.useState([]);*/
+    const BASE_URL = "http://localhost:8080/api/herbs";
+     const [herbs, setHerbs] = React.useState([]);
 
-    /* React.useEffect(() => {
+     React.useEffect(() => {
          fetch(BASE_URL)
              .then(res => res.json())
              .then(herbs => {
@@ -20,7 +19,6 @@ const Herbs = () => {
              })
 
      }, [])
- */
     const addHerb = herb => {
         herb.id = herbs.length + 1;
         setHerbs([...herbs, herb]);
