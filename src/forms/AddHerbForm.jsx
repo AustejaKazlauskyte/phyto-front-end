@@ -1,17 +1,27 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 
+import {useAuth} from "hooks/Auth";
+
 const AddHerbForm = (props) => {
 
     const initHerb = {
         id: null,
         name: '',
-        characteristics: {id: null, title: '', hasHighBloodPressure: false, child: false, pregnant: false},
-        medicalConditions: {id: null, title: ''}
+        characteristics: [{
+            title: '',
+            hasHighBloodPressure: false,
+            child: false, pregnant: false
+        }],
+        medicalConditions: [{
+            title: ''
+        }]
     };
+
 
     const [herb, setHerb] = useState(initHerb);
     const [isError, setIsError] = useState(false);
+    const {isAuthenticated, setToken} = useAuth();
 
     /*
 
@@ -46,11 +56,14 @@ const AddHerbForm = (props) => {
 
     function postData(event) {
         event.preventDefault();
-        axios.post("http://localhost:8080/api/herbs", {
-            herb
+        axios.post("http://localhost:8080/api/herbs", herb, {
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem("token")}`,
+                'Content-Type': 'application/json'
+            }
         }).then(result => {
             if (result.status === 200) {
-
+                setToken(result.data.token);
             } else {
                 setIsError(true);
             }
