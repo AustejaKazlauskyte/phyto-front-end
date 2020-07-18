@@ -21,9 +21,9 @@ function LoginForm(props) {
             password
         }).then(result => {
             if (result.status === 200) {
-                setToken(result.data.token);
-                setLoggedIn(true);
-
+                /*setToken(result.data.token);
+                setLoggedIn(true);*/
+                window.location.replace("http://localhost:3000/api/herbs");
             } else {
                 setIsError(true);
             }

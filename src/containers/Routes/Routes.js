@@ -13,6 +13,7 @@ export default () => (
             <About/>
         </Route>
         <PrivateRoute path='/herbs' component={Herbs}/>
+            <Herbs/>
         <Route path='/login'>
             <Login/>
         </Route>

@@ -71,7 +71,7 @@ const Herbs = () => {
                                        setEditing={setEditing}
                                        updateHerb={updateHerb}/>
                 </div>
-            ) : (  <div className="row">
+            ) : (<div className="row">
                 <div className="row">
                     <div className="five columns">
                         {editing ? (
@@ -98,7 +98,6 @@ const Herbs = () => {
                                    viewExtendedHerbs={viewExtendedHerbs}/>
                     </div>
                 </div>
-                }
             </div>)}
         </div>
     )
