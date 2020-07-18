@@ -11,7 +11,6 @@ const AuthProvider = ({children}) => {
 
     const isAuthenticated = () => {
         if (!token) {
-            debugger
             const sessionToken = localStorage.getItem(TOKEN_KEY);
             if (sessionToken) {
                 setToken(sessionToken);
