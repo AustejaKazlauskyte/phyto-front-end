@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+import { NavigationLink } from 'components/NavigationLink';
 import { PrivateRoute } from 'containers/PrivateRoute';
 import { AuthProvider } from "hooks/Auth";
 import { About } from 'pages/About';
@@ -18,21 +19,22 @@ function App(props) {
                 <div className="container">
                     <nav className="navbar">
                         <ul className="navbar-list">
-                            <li className="navbar-item">
-                                <a className="navbar-link"
-                                   href="/login">Prisijungti</a>
-                            </li>
-                            <li className="navbar-item">
-                                <a className="navbar-link"
-                                   href="/sign-up">Registruotis</a>
-                            </li>
-                            <li className="navbar-item">
-                                <a className="navbar-link" href="/about">Apie
-                                    Phyto</a>
-                            </li>
-                            <li className="navbar-item">
-                                <a className="navbar-link" href="/api/herbs">Vaistažolės</a>
-                            </li>
+                            <NavigationLink
+                                href="/login"
+                                text="Prisijungti"
+                            />
+                            <NavigationLink
+                                href="/sign-up"
+                                text="Registruotis"
+                            />
+                            <NavigationLink
+                                href="/about"
+                                text="Apie Phyto"
+                            />
+                            <NavigationLink
+                                href="/herbs"
+                                text="Vaistažolės"
+                            />
                         </ul>
                     </nav>
                 </div>
@@ -41,7 +43,7 @@ function App(props) {
                     <Route exact path="/about">
                         <About />
                     </Route>
-                    <PrivateRoute path="/api/herbs" component={Herbs} />
+                    <PrivateRoute path="/herbs" component={Herbs} />
                     <Route path="/login">
                         <Login />
                     </Route>
