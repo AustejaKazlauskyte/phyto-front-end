@@ -4,7 +4,7 @@ import { NavigationLink } from 'components/NavigationLink';
 
 import './NavigationMenu.css';
 
-export default ({ children, items }) => (
+export default ({ items }) => (
     <nav className="navbar">
         <ul className="navbar-list">
             {items.map(({href, text}) => (
