@@ -4,39 +4,39 @@ export const AuthContext = createContext();
 
 const useAuth = () => useContext(AuthContext);
 
+const TOKEN_KEY = 'token';
+
 const AuthProvider = ({children}) => {
-    const [token, storeToken] = useState();
+    const [token, setStateToken] = useState();
 
     const isAuthenticated = () => {
-        /* if (!token) {
-             const sessionToken = localStorage.getItem('token');
-             if (sessionToken) {
-                 storeToken(sessionToken);
-             }*/
-        /*  }*/
-        console.log(5, !!token)
+        if (!token) {
+            debugger
+            const sessionToken = localStorage.getItem(TOKEN_KEY);
+            if (sessionToken) {
+                setToken(sessionToken);
+                return true;
+            }
+        }
         return !!token;
     };
 
     const setToken = token => {
-        /* if (token) {*/
-        localStorage.removeItem('token', token);
-        /* }*/
-        console.log(4.5, token)
+        localStorage.setItem(TOKEN_KEY, token);
+        setStateToken(token);
+    };
 
-        storeToken(token)
-
+    const logout = () => {
+        setToken(null);
+        localStorage.removeItem(TOKEN_KEY);
     };
 
     return (
-        <AuthContext.Provider value={{isAuthenticated, setToken}}>
+        <AuthContext.Provider value={{isAuthenticated, setToken, logout}}>
             {children}
         </AuthContext.Provider>
     )
 
 }
 
-/*export function useAuth() {
-    return useContext(AuthContext);
-}*/
 export { AuthProvider, useAuth };
