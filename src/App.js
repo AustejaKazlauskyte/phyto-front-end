@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import { NavigationLink } from 'components/NavigationLink';
+import { MainMenu } from './containers/MainMenu';
 import { PrivateRoute } from 'containers/PrivateRoute';
 import { AuthProvider } from "hooks/Auth";
 import { About } from 'pages/About';
@@ -11,34 +11,12 @@ import { Registration } from "pages/Registration";
 
 import './App.css';
 
-function App(props) {
+function App() {
 
     return (
         <AuthProvider>
             <Router>
-                <div className="container">
-                    <nav className="navbar">
-                        <ul className="navbar-list">
-                            <NavigationLink
-                                href="/login"
-                                text="Prisijungti"
-                            />
-                            <NavigationLink
-                                href="/sign-up"
-                                text="Registruotis"
-                            />
-                            <NavigationLink
-                                href="/about"
-                                text="Apie Phyto"
-                            />
-                            <NavigationLink
-                                href="/herbs"
-                                text="Vaistažolės"
-                            />
-                        </ul>
-                    </nav>
-                </div>
-
+                <MainMenu />
                 <Switch>
                     <Route exact path="/about">
                         <About />
