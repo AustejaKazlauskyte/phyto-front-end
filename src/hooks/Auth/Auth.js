@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
 export const AuthContext = createContext();
 
@@ -9,16 +9,16 @@ const TOKEN_KEY = 'token';
 const AuthProvider = ({children}) => {
     const [token, setStateToken] = useState();
 
-    const isAuthenticated = () => {
+    useEffect(() => {
         if (!token) {
             const sessionToken = localStorage.getItem(TOKEN_KEY);
             if (sessionToken) {
                 setToken(sessionToken);
-                return true;
             }
         }
-        return !!token;
-    };
+    });
+
+    const isAuthenticated = () => !!token;
 
     const setToken = token => {
         localStorage.setItem(TOKEN_KEY, token);
