@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import axios from 'axios';
 
 const AddHerbForm = (props) => {
 
@@ -8,14 +9,9 @@ const AddHerbForm = (props) => {
         characteristics: {id: null, title: '', hasHighBloodPressure: false, child: false, pregnant: false},
         medicalConditions: {id: null, title: ''}
     };
-    /* const initHerb = {
-         id: null,
-         name: '',
-         characteristics: ['id', 'title', 'hasHighBloodPressure', 'child', 'pregnant',],
-         medicalConditions: ['id', 'title']
-     };
- */
+
     const [herb, setHerb] = useState(initHerb);
+    const [isError, setIsError] = useState(false);
 
     /*
 
@@ -42,8 +38,25 @@ const AddHerbForm = (props) => {
         setHerb(newHerb);
     }
 
-    const handleSubmit = e => {
-        e.preventDefault();
+    /* const handleSubmit = e => {
+         e.preventDefault();
+         if (herb.name) props.addHerb(herb);
+         alert('testing');
+     }*/
+
+    function postData(event) {
+        event.preventDefault();
+        axios.post("http://localhost:8080/api/herbs"), {
+            herb
+        }.then(result => {
+            if (result.status === 200) {
+
+            } else {
+                setIsError(true);
+            }
+        }).catch(e => {
+            setIsError(true);
+        });
         if (herb.name) props.addHerb(herb);
     }
 
@@ -62,17 +75,18 @@ const AddHerbForm = (props) => {
             <input className="u-full-width" type="checkbox" name="characteristics.child"
                    checked={herb.characteristics.child}
                    onChange={handleChange}/>
-            <label>Ar tinka neščiosioms?</label>
+            <label>Ar tinka nėščiosioms?</label>
             <input className="u-full-width" type="checkbox" name="characteristics.pregnant"
                    checked={herb.characteristics.pregnant} onChange={handleChange}/>
             <label>Negalavimai</label>
             <input className="u-full-width" type="text" name="medicalConditions.title"
                    value={herb.medicalConditions.title}
                    onChange={handleChange}/>
-            <button className="button-primary" type="submit" onClick={handleSubmit}>Pridėti vaistažolę</button>
+            <button className="button-primary" type="submit" /*onClick={handleSubmit}*/
+                    onClick={postData}>Pridėti vaistažolę
+            </button>
         </form>
     )
 }
-
 
 export default AddHerbForm;
