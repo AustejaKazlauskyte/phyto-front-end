@@ -61,9 +61,6 @@ const Herbs = () => {
 
     return (
         <div className="container">
-            <div>
-                <button className="button-primary" onClick={logOut}>Atsijungti</button>
-            </div>
             {viewAll ? (<div>
                     <h2>Išplėstinis vaistažolių sąrašas</h2>
                     <ExtendedHerbTable herbs={herbs}
