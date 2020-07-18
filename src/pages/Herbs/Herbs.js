@@ -2,19 +2,10 @@ import React, {useState} from "react"
 import HerbTable from "../../tables/HerbTable";
 import AddHerbForm from "../../forms/AddHerbForm";
 import EditHerbForm from "../../forms/EditHerbForm";
-import {useAuth} from "hooks/Auth/Auth";
 import herbList from "../../Data";
 import ExtendedHerbTable from "../../tables/ExtendedHerbTable";
 
-
 const Herbs = () => {
-    const {setToken} = useAuth();
-
-    function logOut(event) {
-
-        setToken(null);
-    }
-
     const [herbs, setHerbs] = useState(herbList);
 
     /*const BASE_URL = "http://localhost:8080/api/herbs";

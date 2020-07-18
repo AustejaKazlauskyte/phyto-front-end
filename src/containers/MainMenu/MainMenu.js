@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { NavigationMenu } from 'components/NavigationMenu';
+import { useAuth } from 'hooks/Auth';
 
 const menuItems = [
     {
@@ -21,6 +22,13 @@ const menuItems = [
     }
 ];
 
-export default () => (
-    <NavigationMenu items={menuItems} />
-);
+export default () => {
+    const {isAuthenticated, logout} = useAuth();
+
+    return (
+        <NavigationMenu
+            items={menuItems}
+            logout={isAuthenticated() && logout}
+        />
+    );
+};
