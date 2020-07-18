@@ -1,6 +1,6 @@
 import React from "react"
 
-import RegistrationForm from "./RegistrationForm";
+import { RegistrationForm } from "containers/RegistrationForm";
 
 function Registration() {
     return (

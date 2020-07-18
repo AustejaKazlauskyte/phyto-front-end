@@ -1,13 +1,13 @@
 import React, {useState} from "react"
-import HerbTable from "../tables/HerbTable";
-import AddHerbForm from "../forms/AddHerbForm";
-import EditHerbForm from "../forms/EditHerbForm";
+import HerbTable from "../../tables/HerbTable";
+import AddHerbForm from "../../forms/AddHerbForm";
+import EditHerbForm from "../../forms/EditHerbForm";
 import {useAuth} from "hooks/Auth/Auth";
-import herbList from "./Data";
-import ExtendedHerbTable from "../tables/ExtendedHerbTable";
+import herbList from "../../Data";
+import ExtendedHerbTable from "../../tables/ExtendedHerbTable";
 
 
-const HerbDatabase = () => {
+const Herbs = () => {
     const {setToken} = useAuth();
 
     function logOut(event) {
@@ -104,6 +104,6 @@ const HerbDatabase = () => {
     )
 }
 
-export default HerbDatabase
+export default Herbs
 
 //grizti prie session storage, atsijungti mygtuko ar daro full page reload, prevent deafult jeigu taip yra, jegu jis padeda i s tokena nuli
