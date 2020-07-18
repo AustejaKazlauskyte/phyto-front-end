@@ -23,6 +23,7 @@ function LoginForm(props) {
             if (result.status === 200) {
                 setToken(result.data.token);
                 setLoggedIn(true);
+
             } else {
                 setIsError(true);
             }
