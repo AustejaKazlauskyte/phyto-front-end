@@ -21,7 +21,6 @@ const AddHerbForm = (props) => {
 
     const [herb, setHerb] = useState(initHerb);
     const [isError, setIsError] = useState(false);
-    const {isAuthenticated, setToken} = useAuth();
 
     /*
 
@@ -63,14 +62,13 @@ const AddHerbForm = (props) => {
             }
         }).then(result => {
             if (result.status === 200) {
-                setToken(result.data.token);
+                props.addHerb(result.data);
             } else {
                 setIsError(true);
             }
         }).catch(e => {
             setIsError(true);
         });
-        if (herb.name) props.addHerb(herb);
     }
 
     return (

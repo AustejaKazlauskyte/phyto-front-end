@@ -1,7 +1,6 @@
 import React from "react";
 
 const ExtendedHerbTable = (props) => {
-    console.log(props.herbs)
     return (
         <table>
             <thead>
@@ -20,7 +19,6 @@ const ExtendedHerbTable = (props) => {
             {props.herbs.length > 0 ? (
                 props.herbs.map(herb => {
                     const {id, name, characteristics, medicalConditions} = herb;
-                    console.log(characteristics);
                     return (
                         <tr key={id}>
                             <td>{id}</td>

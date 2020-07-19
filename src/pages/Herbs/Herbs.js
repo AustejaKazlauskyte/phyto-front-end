@@ -30,7 +30,6 @@ const Herbs = () => {
     }, []);
 
     const addHerb = herb => {
-        herb.id = herbs.length + 1;
         setHerbs([...herbs, herb]);
     };
 
