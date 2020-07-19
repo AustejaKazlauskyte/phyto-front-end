@@ -42,7 +42,7 @@ const AddHerbForm = (props) => {
         const val = (type === 'checkbox' ? checked : value);
         if (name.indexOf(".") > -1) {
             const items = name.split(".");
-            herb[items[0]][items[1]] = val;
+            herb[items[0]][0][items[1]] = val;
         } else
             newHerb.name = val;
         setHerb(newHerb);
@@ -79,21 +79,21 @@ const AddHerbForm = (props) => {
             <input className="u-full-width" type="text" name="name" value={herb.name} onChange={handleChange}/>
             <label>Charakteristikos</label>
             <input className="u-full-width" type="text" name="characteristics.title"
-                   value={herb.characteristics.title}
+                   value={herb.characteristics[0].title}
                    onChange={handleChange}/>
             <label>Ar tinka turinčiam aukštą spaudimą?</label>
             <input className="u-full-width" type="checkbox" name="characteristics.hasHighBloodPressure"
-                   checked={herb.characteristics.hasHighBloodPressure} onChange={handleChange}/>
+                   checked={herb.characteristics[0].hasHighBloodPressure} onChange={handleChange}/>
             <label>Ar tinka vaikams?</label>
             <input className="u-full-width" type="checkbox" name="characteristics.child"
-                   checked={herb.characteristics.child}
+                   checked={herb.characteristics[0].child}
                    onChange={handleChange}/>
             <label>Ar tinka nėščiosioms?</label>
             <input className="u-full-width" type="checkbox" name="characteristics.pregnant"
-                   checked={herb.characteristics.pregnant} onChange={handleChange}/>
+                   checked={herb.characteristics[0].pregnant} onChange={handleChange}/>
             <label>Negalavimai</label>
             <input className="u-full-width" type="text" name="medicalConditions.title"
-                   value={herb.medicalConditions.title}
+                   value={herb.medicalConditions[0].title}
                    onChange={handleChange}/>
             <button className="button-primary" type="submit" /*onClick={handleSubmit}*/
                     onClick={postData}>Pridėti vaistažolę
