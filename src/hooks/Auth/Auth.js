@@ -21,8 +21,10 @@ const AuthProvider = ({children}) => {
     const isAuthenticated = () => !!token;
 
     const setToken = token => {
-        localStorage.setItem(TOKEN_KEY, token);
-        setStateToken(token);
+        if (token) {
+            localStorage.setItem(TOKEN_KEY, token);
+            setStateToken(token);
+        }
     };
 
     const logout = () => {
