@@ -1,6 +1,7 @@
 import React from "react";
 
 const ExtendedHerbTable = (props) => {
+    console.log(props.herbs)
     return (
         <table>
             <thead>
@@ -19,15 +20,16 @@ const ExtendedHerbTable = (props) => {
             {props.herbs.length > 0 ? (
                 props.herbs.map(herb => {
                     const {id, name, characteristics, medicalConditions} = herb;
+                    console.log(characteristics);
                     return (
                         <tr key={id}>
                             <td>{id}</td>
                             <td>{name}</td>
-                            <td>{characteristics.title}</td>
-                            <td>{characteristics.hasHighBloodPressure === "checked" ? "TAIP" : "NE"}</td>
-                            <td>{characteristics.child === "checked" ? "TAIP" : "NE"}</td>
-                            <td>{characteristics.pregnant === "checked" ? "TAIP" : "NE"}</td>
-                            <td>{medicalConditions.title}</td>
+                            <td>{characteristics[0].title}</td>
+                            <td>{characteristics[0].hasHighBloodPressure === "checked" ? "TAIP" : "NE"}</td>
+                            <td>{characteristics[0].child === "checked" ? "TAIP" : "NE"}</td>
+                            <td>{characteristics[0].pregnant === "checked" ? "TAIP" : "NE"}</td>
+                            <td>{medicalConditions[0].title}</td>
                             <td>
 
                                 <i onClick={() => props.viewExtendedHerbs(herb)} className="far fa-eye"></i>

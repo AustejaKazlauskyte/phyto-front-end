@@ -6,11 +6,9 @@ import ExtendedHerbTable from "../../tables/ExtendedHerbTable";
 import axios from "axios";
 
 const Herbs = () => {
-    /*const [herbs, setHerbs] = useState(herbs);*/
 
     const BASE_URL = "http://localhost:8080/api/herbs";
     const [herbs, setHerbs] = React.useState([]);
-
 
     React.useEffect(() => {
         axios.get("http://localhost:8080/api/herbs", {
@@ -21,7 +19,7 @@ const Herbs = () => {
             }
         ).then(result => {
             if (result.status === 200) {
-               setHerbs(result.data);
+                setHerbs(result.data);
             } else {
                 console.error("error getting data");
             }
@@ -31,29 +29,13 @@ const Herbs = () => {
 
     }, []);
 
-    /* axios.post("http://localhost:8080/api/herbs", herb, {
-         headers: {
-             'Authorization': `Bearer ${localStorage.getItem("token")}`,
-             'Content-Type': 'application/json'
-         }
-     }).then(result => {
-         if (result.status === 200) {
-             setToken(result.data.token);
-         } else {
-             setIsError(true);
-         }
-     }).catch(e => {
-         setIsError(true);
-     });
-     if (herb.name) props.addHerb(herb);
-     */
     const addHerb = herb => {
         herb.id = herbs.length + 1;
         setHerbs([...herbs, herb]);
     };
 
     const deleteHerb = id => {
-        axios.delete("http://localhost:8080/api/herbs/"+id, {
+        axios.delete("http://localhost:8080/api/herbs/" + id, {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem("token")}`,
                     'Content-Type': 'application/json'
