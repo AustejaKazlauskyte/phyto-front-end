@@ -20,7 +20,7 @@ const ExtendedHerbTable = (props) => {
                 props.herbs.map(herb => {
                     const {id, name, characteristics, medicalConditions} = herb;
                     return (
-                        <tr>
+                        <tr key={id}>
                             <td>{id}</td>
                             <td>{name}</td>
                             <td>{characteristics.title}</td>

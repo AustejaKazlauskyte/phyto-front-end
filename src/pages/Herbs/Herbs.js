@@ -2,29 +2,74 @@ import React, {useState} from "react"
 import HerbTable from "../../tables/HerbTable";
 import AddHerbForm from "../../forms/AddHerbForm";
 import EditHerbForm from "../../forms/EditHerbForm";
-import herbList from "../../Data";
 import ExtendedHerbTable from "../../tables/ExtendedHerbTable";
+import axios from "axios";
 
 const Herbs = () => {
     /*const [herbs, setHerbs] = useState(herbs);*/
 
     const BASE_URL = "http://localhost:8080/api/herbs";
-     const [herbs, setHerbs] = React.useState([]);
+    const [herbs, setHerbs] = React.useState([]);
 
-     React.useEffect(() => {
-         fetch(BASE_URL)
-             .then(res => res.json())
-             .then(herbs => {
-                 setHerbs(herbs);
-             })
 
-     }, [])
+    React.useEffect(() => {
+        axios.get("http://localhost:8080/api/herbs", {
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem("token")}`,
+                    'Content-Type': 'application/json'
+                }
+            }
+        ).then(result => {
+            if (result.status === 200) {
+               setHerbs(result.data);
+            } else {
+                console.error("error getting data");
+            }
+        }).catch(e => {
+            console.error("error getting data", e);
+        });
+
+    }, []);
+
+    /* axios.post("http://localhost:8080/api/herbs", herb, {
+         headers: {
+             'Authorization': `Bearer ${localStorage.getItem("token")}`,
+             'Content-Type': 'application/json'
+         }
+     }).then(result => {
+         if (result.status === 200) {
+             setToken(result.data.token);
+         } else {
+             setIsError(true);
+         }
+     }).catch(e => {
+         setIsError(true);
+     });
+     if (herb.name) props.addHerb(herb);
+     */
     const addHerb = herb => {
         herb.id = herbs.length + 1;
         setHerbs([...herbs, herb]);
-    }
+    };
 
-    const deleteHerb = id => setHerbs(herbs.filter(herb => herb.id !== id));
+    const deleteHerb = id => {
+        axios.delete("http://localhost:8080/api/herbs/"+id, {
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem("token")}`,
+                    'Content-Type': 'application/json'
+                }
+            }
+        ).then(result => {
+            if (result.status === 200) {
+                /* setHerbs(result.data);*/
+                setHerbs(herbs.filter(herb => herb.id !== id));
+            } else {
+                console.error("error deleting data");
+            }
+        }).catch(e => {
+            console.error("error deleting data", e);
+        });
+    };
 
     const [editing, setEditing] = useState(false);
 
