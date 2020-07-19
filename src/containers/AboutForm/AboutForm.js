@@ -1,5 +1,6 @@
 import React from 'react';
-import { OutputText } from 'components/OutputText';
+
+import OutputText from 'components/OutputText/OutputText';
 
 const title = 'Apie Phyto';
 

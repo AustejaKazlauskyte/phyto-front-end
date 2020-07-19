@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { NavigationLink } from 'components/NavigationLink';
-import { Button } from '../Button';
+import NavigationLink from 'components/NavigationLink/NavigationLink';
+import Button from 'components/Button/Button';
 
 import './NavigationMenu.css';
 
-export default ({ items, logout }) => (
+export default ({items, logout}) => (
     <nav className="navbar">
         <ul className="navbar-list">
             {items.map(({href, text}) => (
@@ -17,12 +17,12 @@ export default ({ items, logout }) => (
             ))}
         </ul>
         {logout &&
-            <Button
-                className="navbar-list-logout"
-                onClick={logout}
-            >
-                Atsijungti
-            </Button>
+        <Button
+            className="navbar-list-logout"
+            onClick={logout}
+        >
+            Atsijungti
+        </Button>
         }
     </nav>
 );

@@ -4,7 +4,7 @@ import AddHerbForm from "../../forms/AddHerbForm";
 import EditHerbForm from "../../forms/EditHerbForm";
 import ExtendedHerbTable from "../../tables/ExtendedHerbTable";
 import axios from "axios";
-import BackButton from "../../components/BackButton/BackButton";
+import BackButton from "components/BackButton/BackButton";
 
 const Herbs = () => {
 
@@ -79,7 +79,10 @@ const Herbs = () => {
         <div className="container">
             {viewAll ? (<div>
                     <h2>Išplėstinis vaistažolių sąrašas</h2>
-                    <BackButton/>
+                    <BackButton
+                        to="/login"
+                        text="Atgal"
+                    />
                     <ExtendedHerbTable herbs={herbs}
                                        viewAll={viewAll}
                                        setEditing={setEditing}

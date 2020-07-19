@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { NavigationMenu } from 'components/NavigationMenu';
-import { useAuth } from 'hooks/Auth';
+import NavigationMenu from 'components/NavigationMenu/NavigationMenu';
+import { useAuth } from 'hooks/Auth/Auth';
 
 const menuItems = [
     {

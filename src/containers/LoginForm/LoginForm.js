@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
 
-import { Button } from 'components/Button';
-import { useAuth } from "hooks/Auth";
+import Button from 'components/Button/Button';
+import { useAuth } from "hooks/Auth/Auth";
 
 function LoginForm() {
     const [isError, setIsError] = useState(false);

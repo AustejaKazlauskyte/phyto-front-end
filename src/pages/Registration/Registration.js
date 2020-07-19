@@ -1,6 +1,6 @@
 import React from "react"
 
-import { RegistrationForm } from "containers/RegistrationForm";
+import RegistrationForm from "containers/RegistrationForm/RegistrationForm";
 
 function Registration() {
     return (
@@ -13,7 +13,7 @@ function Registration() {
                     />
                 </div>
                 <div className="six columns">
-                    <RegistrationForm/>
+                    <RegistrationForm />
                 </div>
             </div>
         </div>
