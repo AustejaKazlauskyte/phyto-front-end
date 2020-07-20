@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 import HerbTable from "../../tables/HerbTable";
 import AddHerbForm from "../../forms/AddHerbForm";
 import EditHerbForm from "../../forms/EditHerbForm";
@@ -8,11 +8,12 @@ import BackButton from "components/BackButton/BackButton";
 
 const Herbs = () => {
 
-    const BASE_URL = "http://localhost:8080/api/herbs";
+    const BASE_URL = 'http://localhost:8080/api/herbs';
+
     const [herbs, setHerbs] = React.useState([]);
 
     React.useEffect(() => {
-        axios.get("http://localhost:8080/api/herbs", {
+        axios.get(BASE_URL, {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem("token")}`,
                     'Content-Type': 'application/json'
@@ -65,7 +66,8 @@ const Herbs = () => {
     }
 
     const updateHerb = (newHerb) => {
-        setHerbs(herbs.map(herb => (herb.id === currentHerb.id ? newHerb : herb)))
+        setHerbs(
+            herbs.map(herb => (herb.id === currentHerb.id ? newHerb : herb)))
     }
 
     const [viewAll, setViewAll] = useState(false);
@@ -86,7 +88,7 @@ const Herbs = () => {
                     <ExtendedHerbTable herbs={herbs}
                                        viewAll={viewAll}
                                        setEditing={setEditing}
-                                       updateHerb={updateHerb}/>
+                                       updateHerb={updateHerb} />
                 </div>
             ) : (<div className="row">
                 <div className="row">
@@ -103,7 +105,7 @@ const Herbs = () => {
                         ) : (
                             <div>
                                 <h2>Pridėti vaistažolę</h2>
-                                <AddHerbForm addHerb={addHerb}/>
+                                <AddHerbForm addHerb={addHerb} />
                             </div>
                         )}
                     </div>
@@ -112,7 +114,7 @@ const Herbs = () => {
                         <HerbTable herbs={herbs}
                                    deleteHerb={deleteHerb}
                                    editHerb={editHerb}
-                                   viewExtendedHerbs={viewExtendedHerbs}/>
+                                   viewExtendedHerbs={viewExtendedHerbs} />
                     </div>
                 </div>
             </div>)}
