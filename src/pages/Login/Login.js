@@ -1,22 +1,23 @@
 import React from "react"
-import RegistrationForm from "./RegistrationForm";
 
-function Registration() {
+import LoginForm from "containers/LoginForm/LoginForm";
+
+function Login() {
     return (
         <div className="container">
             <div className="row">
                 <div className="six columns">
-                    <img alt="login image"
+                    <img alt="login"
                          src="/images/phyto-mergina-su-svarku.png"
                          className="login-image"
                     />
                 </div>
                 <div className="six columns">
-                    <RegistrationForm/>
+                    <LoginForm />
                 </div>
             </div>
         </div>
     )
 }
 
-export default Registration;
+export default Login;

@@ -2,38 +2,18 @@
 * {
     box-sizing: border-box;
 }
-/*
+
 body {
-    overflow: hidden;
-}*/
+    margin: 0;
+}
 
 /* ------------ LOGIN STYLES ------------*/
 .login-image {
     max-width: 80%;
     height: auto;
-    border: 2px red solid;
+    border: 2px white solid;
     margin: 20% auto 0px auto;
 }
-
-/* ------------ MENU STYLES ------------*/
-
-/*
-.menu-display {
-    display: flex;
-    float: right;
-
-}
-
-.menu-item {
-    list-style-type: none;
-    margin: 15px 30px auto auto;
-    padding: 10px;
-    border-bottom: solid 1px #38d39f;
-    color: black;
-    text-decoration-color: black;
-    a: black;
-}
-*/
 
 /* ------------ ICON STYLES ------------*/
 
@@ -43,42 +23,12 @@ i {
 
 /* ------------ NAVBAR STYLES ------------*/
 
-@media (min-width: 750px) {
-    .has-docked-nav .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-    }
-}
-
-@media (min-width: 750px) {
-    .navbar, .navbar-spacer {
-        display: block;
-        width: 100%;
-        height: 6.5rem;
-        background: #fff;
-        z-index: 99;
-        border-top: 1px solid #eee;
-        border-bottom: 1px solid #eee;
-    }
-}
-
 body {
     font-size: 1.5em;
     line-height: 1.6;
     font-weight: 400;
     font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #222;
-}
-
-/* ------------ NAVBAR ITEM ------------*/
-
-@media (min-width: 750px) {
-    .navbar-item {
-        position: relative;
-        float: left;
-        margin-bottom: 0;
-    }
 }
 
 li {
@@ -86,34 +36,12 @@ li {
     text-align: -webkit-match-parent;
 }
 
-@media (min-width: 750px) {
-    .navbar-list {
-        list-style: none;
-        margin-bottom: 0;
-    }
-}
-
-
 body {
     font-size: 1.5em;
     line-height: 1.6;
     font-weight: 400;
     font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #222;
-}
-/* ------------ NAVBAR LINK ------------*/
-
-@media (min-width: 750px) {
-    .navbar-link {
-        text-transform: uppercase;
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: .2rem;
-        margin-right: 35px;
-        text-decoration: none;
-        line-height: 6.5rem;
-        color: #222;
-    }
 }
 
 a {

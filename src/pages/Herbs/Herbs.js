@@ -1,41 +1,57 @@
 import React, {useState} from "react"
-import HerbTable from "../tables/HerbTable";
-import AddHerbForm from "../forms/AddHerbForm";
-import EditHerbForm from "../forms/EditHerbForm";
-import {useAuth} from "../context/auth";
-import herbList from "./Data";
-import ExtendedHerbTable from "../tables/ExtendedHerbTable";
+import HerbTable from "../../tables/HerbTable";
+import AddHerbForm from "../../forms/AddHerbForm";
+import EditHerbForm from "../../forms/EditHerbForm";
+import ExtendedHerbTable from "../../tables/ExtendedHerbTable";
+import axios from "axios";
+import BackButton from "components/BackButton/BackButton";
 
+const Herbs = () => {
 
-const HerbDatabase = () => {
-    const {setToken} = useAuth();
+    const BASE_URL = "http://localhost:8080/api/herbs";
+    const [herbs, setHerbs] = React.useState([]);
 
-    function logOut(event) {
+    React.useEffect(() => {
+        axios.get("http://localhost:8080/api/herbs", {
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem("token")}`,
+                    'Content-Type': 'application/json'
+                }
+            }
+        ).then(result => {
+            if (result.status === 200) {
+                setHerbs(result.data);
+            } else {
+                console.error("error getting data");
+            }
+        }).catch(e => {
+            console.error("error getting data", e);
+        });
 
-        setToken(null);
-    }
+    }, []);
 
-    const [herbs, setHerbs] = useState(herbList);
-
-    /*const BASE_URL = "http://localhost:8080/api/herbs";
-*/
-    /* const [herbs, setHerbs] = React.useState([]);*/
-
-    /* React.useEffect(() => {
-         fetch(BASE_URL)
-             .then(res => res.json())
-             .then(herbs => {
-                 setHerbs(herbs);
-             })
-
-     }, [])
- */
     const addHerb = herb => {
-        herb.id = herbs.length + 1;
         setHerbs([...herbs, herb]);
-    }
+    };
 
-    const deleteHerb = id => setHerbs(herbs.filter(herb => herb.id !== id));
+    const deleteHerb = id => {
+        axios.delete("http://localhost:8080/api/herbs/" + id, {
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem("token")}`,
+                    'Content-Type': 'application/json'
+                }
+            }
+        ).then(result => {
+            if (result.status === 200) {
+                /* setHerbs(result.data);*/
+                setHerbs(herbs.filter(herb => herb.id !== id));
+            } else {
+                console.error("error deleting data");
+            }
+        }).catch(e => {
+            console.error("error deleting data", e);
+        });
+    };
 
     const [editing, setEditing] = useState(false);
 
@@ -61,17 +77,18 @@ const HerbDatabase = () => {
 
     return (
         <div className="container">
-            <div>
-                <button className="button-primary" onClick={logOut}>Atsijungti</button>
-            </div>
             {viewAll ? (<div>
                     <h2>Išplėstinis vaistažolių sąrašas</h2>
+                    <BackButton
+                        to="/login"
+                        text="Atgal"
+                    />
                     <ExtendedHerbTable herbs={herbs}
                                        viewAll={viewAll}
                                        setEditing={setEditing}
                                        updateHerb={updateHerb}/>
                 </div>
-            ) : (  <div className="row">
+            ) : (<div className="row">
                 <div className="row">
                     <div className="five columns">
                         {editing ? (
@@ -98,12 +115,11 @@ const HerbDatabase = () => {
                                    viewExtendedHerbs={viewExtendedHerbs}/>
                     </div>
                 </div>
-                }
             </div>)}
         </div>
     )
 }
 
-export default HerbDatabase
+export default Herbs
 
 //grizti prie session storage, atsijungti mygtuko ar daro full page reload, prevent deafult jeigu taip yra, jegu jis padeda i s tokena nuli

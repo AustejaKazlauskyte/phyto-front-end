@@ -15,7 +15,7 @@ const HerbTable = (props) => {
                 props.herbs.map(herb => {
                     const {id, name} = herb;
                     return (
-                        <tr>
+                        <tr key={id}>
                             <td>{id}</td>
                             <td>{name}</td>
                             <td>
