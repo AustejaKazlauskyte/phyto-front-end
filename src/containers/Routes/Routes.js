@@ -2,10 +2,10 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import PrivateRoute from 'containers/PrivateRoute/PrivateRoute';
-import About from 'pages/About/About';
-import Herbs from 'pages/Herbs/Herbs';
-import Login from 'pages/Login/Login';
-import Registration from 'pages/Registration/Registration';
+import About from 'pages/about/about';
+import Herbs from 'pages/herbs/herbs';
+import Login from 'pages/login/login';
+import Registration from 'pages/registration/registration';
 
 export const ROUTE_ABOUT = '/about';
 export const ROUTE_HERBS = '/herbs';
