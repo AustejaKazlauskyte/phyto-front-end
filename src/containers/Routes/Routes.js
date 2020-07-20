@@ -7,16 +7,21 @@ import Herbs from 'pages/Herbs/Herbs';
 import Login from 'pages/Login/Login';
 import Registration from 'pages/Registration/Registration';
 
+export const ROUTE_ABOUT = '/about';
+export const ROUTE_HERBS = '/herbs';
+export const ROUTE_LOGIN = '/login';
+export const ROUTE_SIGN_UP = '/sign-up';
+
 export default () => (
     <Switch>
-        <Route path='/about'>
+        <Route path={ROUTE_ABOUT}>
             <About/>
         </Route>
-        <PrivateRoute path='/herbs' component={Herbs} />
-        <Route path='/login'>
+        <PrivateRoute path={ROUTE_HERBS} component={Herbs} />
+        <Route path={ROUTE_LOGIN}>
             <Login/>
         </Route>
-        <Route path={['/', '/sign-up']}>
+        <Route path={['/', ROUTE_SIGN_UP]}>
             <Registration/>
         </Route>
     </Switch>
