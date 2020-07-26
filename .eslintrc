@@ -1,0 +1,38 @@
+{
+  "extends": ["@imaginary-cloud/react"],
+  "rules": {
+    "import/order": [
+      "error",
+      {
+        "groups": [["external", "builtin"], "internal", ["parent", "sibling", "index"]],
+        "newlines-between": "always",
+        "pathGroups": [
+          {
+            "group": "internal",
+            "pattern": "containers/**"
+          },
+          {
+            "group": "internal",
+            "pattern": "components/**"
+          },
+          {
+            "group": "internal",
+            "pattern": "hooks/**"
+          },
+          {
+            "group": "internal",
+            "pattern": "pages/**"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["builtin"]
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": ["node_modules", "src/"]
+      }
+    }
+  }
+}
