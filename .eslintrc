@@ -1,5 +1,3 @@
 {
-    "extends": [
-        "@imaginary-cloud/react"
-    ]
+    "extends": ["@imaginary-cloud/react"]
 }

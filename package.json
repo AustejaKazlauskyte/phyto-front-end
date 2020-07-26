@@ -34,10 +34,8 @@
       "last 1 safari version"
     ]
   },
-  "prettier": "@imaginary-cloud/prettier-config",
   "devDependencies": {
     "@imaginary-cloud/eslint-config-react": "1.0.1",
-    "@imaginary-cloud/prettier-config": "1.0.0",
     "eslint-config-airbnb": "18.1.0",
     "eslint-config-prettier": "6.10.1",
     "eslint-plugin-import": "2.20.2",
