@@ -1,0 +1,21 @@
+.input {
+  height: 38px;
+  padding: 6px 10px;
+  background-color: #fff;
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+  box-shadow: none;
+  margin-bottom: 1.5rem;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  border: 1px solid #32be8f;
+  outline: 0;
+}
+
+.label {
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: 600;
+}

@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import IconButton from 'components/IconButton/IconButton'
+
 const HerbTable = ({ deleteHerb, editHerb, herbs, viewExtendedHerbs }) => (
   <table>
     <thead>
@@ -19,15 +21,13 @@ const HerbTable = ({ deleteHerb, editHerb, herbs, viewExtendedHerbs }) => (
               <td>{id}</td>
               <td>{name}</td>
               <td>
-                <button onClick={() => viewExtendedHerbs(herb)}>
-                  <i className="far fa-eye" />
-                </button>
-                <button onClick={() => editHerb(id, herb)}>
-                  <i className="far fa-edit" />
-                </button>
-                <button onClick={() => deleteHerb(id)}>
-                  <i className=" fas fa-trash" />
-                </button>
+                <IconButton
+                  icon="far fa-eye"
+                  onClick={viewExtendedHerbs}
+                  val={herb}
+                />
+                <IconButton icon="far fa-edit" onClick={editHerb} val={herb} />
+                <IconButton icon="fas fa-trash" onClick={deleteHerb} val={id} />
               </td>
             </tr>
           )

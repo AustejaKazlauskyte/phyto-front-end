@@ -1,22 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import NavigationLink from 'components/NavigationLink/NavigationLink'
+import NavigationMenuItem from 'components/NavigationMenuItem/NavigationMenuItem'
 import Button from 'components/Button/Button'
 
-import './NavigationMenu.css'
+import styles from './NavigationMenu.module.css'
 
 const NavigationMenu = ({ items, logout }) => (
-  <nav className="navbar">
-    <ul className="navbar-list">
+  <nav className={styles.navbar}>
+    <ul className={styles.navbarList}>
       {items.map(({ href, text }) => (
-        <NavigationLink key={href} href={href} text={text} />
+        <NavigationMenuItem key={href} href={href} text={text} />
       ))}
     </ul>
     {logout && (
-      <Button className="navbar-list-logout" onClick={logout}>
-        Atsijungti
-      </Button>
+      <div className={styles.logoutSection}>
+        <Button onClick={logout}>Atsijungti</Button>
+      </div>
     )}
   </nav>
 )

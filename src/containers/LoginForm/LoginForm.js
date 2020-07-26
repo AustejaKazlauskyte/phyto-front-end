@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 
-import Button from 'components/Button/Button'
 import { useAuth } from 'hooks/Auth/Auth'
+import Button from 'components/Button/Button'
+import Input from 'components/Input/Input'
 
 function LoginForm() {
   const [isError, setIsError] = useState(false)
@@ -30,34 +31,33 @@ function LoginForm() {
       })
   }
 
+  const handleChangeEmail = ({ target: { value } }) => setEmail(value)
+
+  const handleChangePassword = ({ target: { value } }) => setPassword(value)
+
   return isAuthenticated() ? (
     <Redirect to="/herbs" />
   ) : (
     <div className="container" style={{ margin: '50% auto 20%' }}>
       <form onSubmit={login}>
         <h3>Sveiki užsukę</h3>
-        <label htmlFor="email">Prisijungimo vardas</label>
-        <input
+        <Input
           id="email"
-          className="u-full-width"
-          type="email"
-          value={email}
-          onChange={(e) => {
-            setEmail(e.target.value)
-          }}
+          onChange={handleChangeEmail}
+          label="Prisijungimo vardas"
           placeholder="pvz., jonas@pastodezute.lt"
+          type="email"
         />
-        <label htmlFor="password">Slaptažodis</label>
-        <input
+        <Input
           id="password"
-          className="u-full-width"
-          type="password"
-          onChange={(e) => {
-            setPassword(e.target.value)
-          }}
+          onChange={handleChangePassword}
+          label="Slaptažodis"
           placeholder="slaptažodis"
+          type="password"
         />
-        <Button type="submit">Prisijungti</Button>
+        <Button primary type="submit">
+          Prisijungti
+        </Button>
       </form>
       {isError && <p>Pateikėte neteisingą informaciją</p>}
     </div>

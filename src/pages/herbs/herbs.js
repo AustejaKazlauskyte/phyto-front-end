@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
-import BackButton from 'components/BackButton/BackButton'
+import Link from 'components/Link/Link'
 
 import HerbTable from '../../tables/HerbTable'
 import AddHerbForm from '../../forms/AddHerbForm'
@@ -11,7 +11,9 @@ import ExtendedHerbTable from '../../tables/ExtendedHerbTable'
 const Herbs = () => {
   const BASE_URL = 'http://localhost:8080/api/herbs'
 
-  const [herbs, setHerbs] = React.useState([])
+  const [currentHerb, setCurrentHerb] = useState({})
+  const [editing, setEditing] = useState(false)
+  const [herbs, setHerbs] = useState([])
 
   React.useEffect(() => {
     axios
@@ -48,13 +50,7 @@ const Herbs = () => {
       })
   }
 
-  const [editing, setEditing] = useState(false)
-
-  const initialHerb = { id: null, name: '' }
-
-  const [currentHerb, setCurrentHerb] = useState(initialHerb)
-
-  const editHerb = (id, herb) => {
+  const editHerb = (herb) => {
     setEditing(true)
     setCurrentHerb(herb)
   }
@@ -75,7 +71,7 @@ const Herbs = () => {
       {viewAll ? (
         <div>
           <h2>Išplėstinis vaistažolių sąrašas</h2>
-          <BackButton to="/login" text="Atgal" />
+          <Link to="/login" text="Atgal" />
           <ExtendedHerbTable
             herbs={herbs}
             viewAll={viewAll}
