@@ -1,33 +1,26 @@
 import React from 'react'
 
 import Button from 'components/Button/Button'
+import Input from 'components/Input/Input'
 
 function RegistrationForm() {
   return (
     <div className="container" style={{ margin: '50% auto 20%' }}>
       <form>
         <h3>Registracija</h3>
-        <label htmlFor="email">Prisijungimo vardas</label>
-        <input
+        <Input
           id="email"
-          className="u-full-width"
-          type="text"
-          /* value={userName}
-                    onChange={e => {
-                        setUserName(e.target.value);
-                    }} */
+          label="Prisijungimo vardas"
           placeholder="pvz., jonas@pastodezute.lt"
+          type="email"
         />
-        <label htmlFor="password">Slaptažodis</label>
-        <input
+        <Input
           id="password"
-          className="u-full-width"
-          type="password"
+          label="Slaptažodis"
           placeholder="slaptažodis"
+          type="password"
         />
-        <Button primary type="submit">
-          Registruotis
-        </Button>
+        <Button primary>Registruotis</Button>
       </form>
     </div>
   )

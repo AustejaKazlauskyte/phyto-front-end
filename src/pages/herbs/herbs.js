@@ -11,7 +11,9 @@ import ExtendedHerbTable from '../../tables/ExtendedHerbTable'
 const Herbs = () => {
   const BASE_URL = 'http://localhost:8080/api/herbs'
 
-  const [herbs, setHerbs] = React.useState([])
+  const [currentHerb, setCurrentHerb] = useState({})
+  const [editing, setEditing] = useState(false)
+  const [herbs, setHerbs] = useState([])
 
   React.useEffect(() => {
     axios
@@ -47,12 +49,6 @@ const Herbs = () => {
         }
       })
   }
-
-  const [editing, setEditing] = useState(false)
-
-  const initialHerb = { id: null, name: '' }
-
-  const [currentHerb, setCurrentHerb] = useState(initialHerb)
 
   const editHerb = (herb) => {
     setEditing(true)

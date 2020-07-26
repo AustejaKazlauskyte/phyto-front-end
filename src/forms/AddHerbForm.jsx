@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
 
-import Button from '../components/Button/Button'
+import Button from 'components/Button/Button'
+import Checkbox from 'components/Checkbox/Checkbox'
+import Input from 'components/Input/Input'
 
 const AddHerbForm = ({ addHerb }) => {
   const initHerb = {
@@ -24,16 +26,6 @@ const AddHerbForm = ({ addHerb }) => {
   }
 
   const [herb, setHerb] = useState(initHerb)
-
-  /*
-        const handleChange = ({target: {name, value}}) => {
-            setHerb({...herb, [name]: value});
-        }
-
-        const handleChangeCheckbox = ({target: {name, checked}}) => {
-            setHerb({...herb, [name]: checked});
-        }
-    */
 
   const handleChange = ({ target: { name, value, type, checked } }) => {
     const newHerb = { ...herb }
@@ -65,61 +57,50 @@ const AddHerbForm = ({ addHerb }) => {
 
   return (
     <form onSubmit={postData}>
-      <label htmlFor="title">Vaistažolės pavadinimas</label>
-      <input
+      <Input
         id="title"
-        className="u-full-width"
-        type="text"
+        label="Vaistažolės pavadinimas"
         name="name"
+        onChange={handleChange}
         value={herb.name}
-        onChange={handleChange}
+        placeholder="Pvz.: Dilgėlė"
       />
-      <label htmlFor="characteristics">Charakteristikos</label>
-      <input
+      <Input
         id="characteristics"
-        className="u-full-width"
-        type="text"
+        label="Charakteristikos"
         name="characteristics.title"
+        onChange={handleChange}
         value={herb.characteristics[0].title}
-        onChange={handleChange}
+        type="email"
       />
-      <label htmlFor="high-blood-pressure">
-        Ar tinka turinčiam aukštą spaudimą?
-      </label>
-      <input
-        id="high-blooc-pressure"
-        className="u-full-width"
-        type="checkbox"
+      <Checkbox
+        id="high-blood-pressure"
+        label="Ar tinka turinčiam aukštą spaudimą?"
         name="characteristics.hasHighBloodPressure"
+        onChange={handleChange}
         checked={herb.characteristics[0].hasHighBloodPressure}
-        onChange={handleChange}
       />
-      <label htmlFor="characteristics-child">Ar tinka vaikams?</label>
-      <input
+      <Checkbox
         id="characteristics-child"
-        className="u-full-width"
-        type="checkbox"
+        label="Ar tinka vaikams?"
         name="characteristics.child"
+        onChange={handleChange}
         checked={herb.characteristics[0].child}
-        onChange={handleChange}
       />
-      <label htmlFor="characteristics-pregnant">Ar tinka nėščiosioms?</label>
-      <input
+      <Checkbox
         id="characteristics-pregnant"
-        className="u-full-width"
-        type="checkbox"
+        label="Ar tinka nėščiosioms?"
         name="characteristics.pregnant"
+        onChange={handleChange}
         checked={herb.characteristics[0].pregnant}
-        onChange={handleChange}
       />
-      <label htmlFor="conditions-title">Negalavimai</label>
-      <input
+      <Input
         id="conditions-title"
-        className="u-full-width"
-        type="text"
+        label="Negalavimai"
         name="medicalConditions.title"
-        value={herb.medicalConditions[0].title}
         onChange={handleChange}
+        value={herb.medicalConditions[0].title}
+        type="email"
       />
       <Button primary type="submit">
         Pridėti vaistažolę
