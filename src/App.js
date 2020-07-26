@@ -1,17 +1,17 @@
-import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import React from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
 
-import MainMenu from 'containers/MainMenu/MainMenu';
-import Routes from "containers/Routes/Routes";
-import { AuthProvider } from 'hooks/Auth/Auth';
+import MainMenu from 'containers/MainMenu/MainMenu'
+import Routes from 'containers/Routes/Routes'
+import { AuthProvider } from 'hooks/Auth/Auth'
 
-import './App.css';
+import './App.css'
 
 export default () => (
-    <AuthProvider>
-        <Router>
-            <MainMenu />
-            <Routes />
-        </Router>
-    </AuthProvider>
-);
+  <AuthProvider>
+    <Router>
+      <MainMenu />
+      <Routes />
+    </Router>
+  </AuthProvider>
+)

@@ -1,43 +1,47 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 
-export const AuthContext = createContext();
+export const AuthContext = createContext()
 
-const useAuth = () => useContext(AuthContext);
+const useAuth = () => useContext(AuthContext)
 
-const TOKEN_KEY = 'token';
+const TOKEN_KEY = 'token'
 
-const AuthProvider = ({children}) => {
-    const [token, setStateToken] = useState();
+const AuthProvider = ({ children }) => {
+  const [token, setStateToken] = useState()
 
-    useEffect(() => {
-        if (!token) {
-            const sessionToken = localStorage.getItem(TOKEN_KEY);
-            if (sessionToken) {
-                setToken(sessionToken);
-            }
-        }
-    });
+  useEffect(() => {
+    if (!token) {
+      const sessionToken = localStorage.getItem(TOKEN_KEY)
+      if (sessionToken) {
+        setToken(sessionToken)
+      }
+    }
+  })
 
-    const isAuthenticated = () => !!token;
+  const isAuthenticated = () => !!token
 
-    const setToken = token => {
-        if (token) {
-            localStorage.setItem(TOKEN_KEY, token);
-            setStateToken(token);
-        }
-    };
+  const setToken = (tokenValue) => {
+    if (tokenValue) {
+      localStorage.setItem(TOKEN_KEY, tokenValue)
+      setStateToken(tokenValue)
+    }
+  }
 
-    const logout = () => {
-        setStateToken(null);
-        localStorage.removeItem(TOKEN_KEY);
-    };
+  const logout = () => {
+    setStateToken(null)
+    localStorage.removeItem(TOKEN_KEY)
+  }
 
-    return (
-        <AuthContext.Provider value={{isAuthenticated, setToken, logout}}>
-            {children}
-        </AuthContext.Provider>
-    )
-
+  return (
+    <AuthContext.Provider value={{ isAuthenticated, setToken, logout }}>
+      {children}
+    </AuthContext.Provider>
+  )
 }
 
-export { AuthProvider, useAuth };
+AuthProvider.propTypes = {
+  children: PropTypes.element.isRequired,
+}
+
+export { AuthProvider, useAuth }

@@ -1,7 +1,5 @@
-import React from "react";
+import React from 'react'
 
-import AboutForm from 'containers/AboutForm/AboutForm';
+import AboutForm from 'containers/AboutForm/AboutForm'
 
-export default () => (
-    <AboutForm />
-);
+export default () => <AboutForm />

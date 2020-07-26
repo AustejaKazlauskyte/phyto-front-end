@@ -1,10 +1,16 @@
-import React from 'react';
+import React from 'react'
+import PropTypes from 'prop-types'
 
-export default ({children, ...other}) => (
-    <button
-        className="button-primary"
-        {...other}
-    >
-        {children}
-    </button>
-);
+const Button = ({ children, type, ...other }) => (
+  <button className="button-primary" {...other} type={type || 'button'}>
+    {children}
+  </button>
+)
+
+Button.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.elementType, PropTypes.string])
+    .isRequired,
+  type: PropTypes.string,
+}
+
+export default Button

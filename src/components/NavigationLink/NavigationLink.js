@@ -1,15 +1,20 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { NavLink } from 'react-router-dom'
 
-import './NavigationLink.css';
+import './NavigationLink.css'
 
-export default ({href, text}) => (
-    <li className="navbar-item">
-        <NavLink
-            className="navbar-link"
-            to={href}
-        >
-            {text}
-        </NavLink>
-    </li>
-);
+const NavigationLink = ({ href, text }) => (
+  <li className="navbar-item">
+    <NavLink className="navbar-link" to={href}>
+      {text}
+    </NavLink>
+  </li>
+)
+
+NavigationLink.propTypes = {
+  href: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+}
+
+export default NavigationLink
