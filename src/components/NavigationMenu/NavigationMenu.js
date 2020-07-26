@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import NavigationLink from 'components/NavigationLink/NavigationLink'
+import NavigationMenuItem from 'components/NavigationMenuItem/NavigationMenuItem'
 import Button from 'components/Button/Button'
 
 import styles from './NavigationMenu.module.css'
@@ -10,7 +10,7 @@ const NavigationMenu = ({ items, logout }) => (
   <nav className={styles.navbar}>
     <ul className={styles.navbarList}>
       {items.map(({ href, text }) => (
-        <NavigationLink key={href} href={href} text={text} />
+        <NavigationMenuItem key={href} href={href} text={text} />
       ))}
     </ul>
     {logout && (
