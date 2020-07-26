@@ -54,7 +54,7 @@ const Herbs = () => {
 
   const [currentHerb, setCurrentHerb] = useState(initialHerb)
 
-  const editHerb = (id, herb) => {
+  const editHerb = (herb) => {
     setEditing(true)
     setCurrentHerb(herb)
   }
