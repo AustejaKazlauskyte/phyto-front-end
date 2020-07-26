@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
-import BackButton from 'components/BackButton/BackButton'
+import Link from 'components/Link/Link'
 
 import HerbTable from '../../tables/HerbTable'
 import AddHerbForm from '../../forms/AddHerbForm'
@@ -75,7 +75,7 @@ const Herbs = () => {
       {viewAll ? (
         <div>
           <h2>Išplėstinis vaistažolių sąrašas</h2>
-          <BackButton to="/login" text="Atgal" />
+          <Link to="/login" text="Atgal" />
           <ExtendedHerbTable
             herbs={herbs}
             viewAll={viewAll}

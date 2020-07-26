@@ -157,14 +157,6 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
 p {
   margin-top: 0; }
 
-
-/* Links
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-a {
-  color: #38d39f; }
-a:hover {
-  color: #32be8f; }
-
 /* Forms
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 input[type="email"],
