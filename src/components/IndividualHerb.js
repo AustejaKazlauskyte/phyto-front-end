@@ -1,13 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import Button from './Button/Button'
+
 const IndividualHerb = ({ herbs }) =>
   herbs.length > 0 ? (
     herbs.map((herb) => {
       const { id, name, characteristics } = herb
       return (
         <div>
-          <button type="button">Suskleisti</button>
+          <Button>Suskleisti</Button>
           <div>
             <h1>
               {id}. {name}

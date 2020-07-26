@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
 
+import Button from '../components/Button/Button'
+
 const AddHerbForm = ({ addHerb }) => {
   const initHerb = {
     id: null,
@@ -62,7 +64,7 @@ const AddHerbForm = ({ addHerb }) => {
   }
 
   return (
-    <form>
+    <form onSubmit={postData}>
       <label htmlFor="title">Vaistažolės pavadinimas</label>
       <input
         id="title"
@@ -119,9 +121,9 @@ const AddHerbForm = ({ addHerb }) => {
         value={herb.medicalConditions[0].title}
         onChange={handleChange}
       />
-      <button className="button-primary" type="submit" onClick={postData}>
+      <Button primary type="submit">
         Pridėti vaistažolę
-      </button>
+      </Button>
     </form>
   )
 }

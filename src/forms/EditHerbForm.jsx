@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+import Button from '../components/Button/Button'
 
 const EditHerbForm = ({ currentHerb, setEditing, updateHerb }) => {
   const [herb, setHerb] = useState(currentHerb)
@@ -19,8 +20,10 @@ const EditHerbForm = ({ currentHerb, setEditing, updateHerb }) => {
     if (herb.name) updateHerb(herb)
   }
 
+  const resetForm = () => setEditing(false)
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label htmlFor="name">Vaistažolės pavadinimas</label>
       <input
         id="name"
@@ -80,12 +83,12 @@ const EditHerbForm = ({ currentHerb, setEditing, updateHerb }) => {
         onChange={handleChange}
       />
 
-      <button className="button-primary" type="submit" onClick={handleSubmit}>
-        Redaguoti vaistažolę
-      </button>
-      <button type="submit" onClick={() => setEditing(false)}>
+      <Button primary type="submit">
+        Išsaugoti
+      </Button>
+      <Button type="reset" onClick={resetForm}>
         Atšaukti
-      </button>
+      </Button>
     </form>
   )
 }

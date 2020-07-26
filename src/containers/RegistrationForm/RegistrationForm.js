@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Button from 'components/Button/Button'
+
 function RegistrationForm() {
   return (
     <div className="container" style={{ margin: '50% auto 20%' }}>
@@ -23,13 +25,9 @@ function RegistrationForm() {
           type="password"
           placeholder="slaptažodis"
         />
-        <button
-          className="button-primary"
-          type="submit"
-          /* onClick={postLogin} */
-        >
-          Prisijungti{' '}
-        </button>
+        <Button primary type="submit">
+          Registruotis
+        </Button>
       </form>
     </div>
   )

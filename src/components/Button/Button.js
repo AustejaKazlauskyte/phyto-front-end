@@ -1,8 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Button = ({ children, type, ...other }) => (
-  <button className="button-primary" {...other} type={type || 'button'}>
+import styles from './Button.module.css'
+
+const Button = ({ children, primary, type, ...other }) => (
+  <button
+    className={`${styles.button} ${primary ? styles.buttonPrimary : ''}`}
+    {...other}
+    type={type || 'button'}
+  >
     {children}
   </button>
 )
@@ -10,6 +16,7 @@ const Button = ({ children, type, ...other }) => (
 Button.propTypes = {
   children: PropTypes.oneOfType([PropTypes.elementType, PropTypes.string])
     .isRequired,
+  primary: PropTypes.bool,
   type: PropTypes.string,
 }
 
