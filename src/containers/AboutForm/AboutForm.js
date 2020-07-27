@@ -1,11 +1,18 @@
 import React from 'react'
 
-import OutputText from 'components/OutputText/OutputText'
+import { ContentFrame, Paragraph, Title } from 'components'
 
 const title = 'Apie Phyto'
 
-const text = `Phyto yra didžiausia Lietuvoje vaistažolių duomenų bazė, turinti 
-              per 2000 vaistažolių. Jeigu skaitote šį tekstą, duomenų bazė šiuo 
+const text = `Phyto yra didžiausia Lietuvoje vaistažolių duomenų bazė, turinti
+              per 2000 vaistažolių. Jeigu skaitote šį tekstą, duomenų bazė šiuo
               metu yra privati.`
 
-export default () => <OutputText title={title} text={text} />
+const AboutForm = () => (
+  <ContentFrame>
+    <Title>{title}</Title>
+    <Paragraph>{text}</Paragraph>
+  </ContentFrame>
+)
+
+export default AboutForm

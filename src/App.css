@@ -1,39 +1,10 @@
-/* ------------ GENERAL STYLES ------------*/
 * {
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-body {
-    margin: 0;
-}
-
-/* ------------ LOGIN STYLES ------------*/
-.login-image {
-    max-width: 80%;
-    height: auto;
-    border: 2px white solid;
-    margin: 20% auto 0px auto;
-}
-
-/* ------------ ICON STYLES ------------*/
-
-i {
-    margin: 10%;
-}
-
-/* ------------ NAVBAR STYLES ------------*/
-
-body {
-    font-size: 1.5em;
-    line-height: 1.6;
-    font-weight: 400;
-    font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #222;
-}
-
-li {
-    display: list-item;
-    text-align: -webkit-match-parent;
+html {
+  font-size: 62.5%;
 }
 
 body {
@@ -44,6 +15,3 @@ body {
     color: #222;
 }
 
-a {
-    background-color: transparent;
-}

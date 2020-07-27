@@ -1,29 +1,17 @@
-@media (min-width: 750px) {
-  .navbar {
-    top: 0;
-    left: 0;
-  }
+.navbar {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  height: 6.2rem;
 }
 
-@media (min-width: 750px) {
-  .navbar {
-    display: block;
-    width: 100%;
-    height: 6.5rem;
-    background: #fff;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-  }
-}
-
-@media (min-width: 750px) {
-  .navbarList {
-    list-style: none;
-    margin-bottom: 0;
-  }
+.navbarList {
+  list-style: none;
+  margin-left: 4rem;
 }
 
 .logoutSection {
-  float: right;
   margin: 12px 15px 0 0;
 }

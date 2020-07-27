@@ -6,7 +6,11 @@ import styles from './NavigationMenuItem.module.css'
 
 const NavigationMenuItem = ({ href, text }) => (
   <li className={styles.navbarItem}>
-    <NavLink className={styles.navbarLink} to={href}>
+    <NavLink
+      className={styles.navbarLink}
+      activeClassName={styles.navbarLinkActive}
+      to={href}
+    >
       {text}
     </NavLink>
   </li>
