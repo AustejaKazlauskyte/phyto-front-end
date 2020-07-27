@@ -1,6 +1,8 @@
 import React from 'react'
 
-import { ContentFrame, Paragraph, Title } from 'components'
+import ContentFrame from 'components/ContentFrame/ContentFrame'
+import Paragraph from 'components/Paragraph/Paragraph'
+import Title from 'components/Title/Title'
 
 const title = 'Apie Phyto'
 

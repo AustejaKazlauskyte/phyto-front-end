@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
 
-import { Button, Checkbox, Input } from 'components'
+import Button from 'components/Button/Button'
+import Checkbox from 'components/Checkbox/Checkbox'
+import Input from 'components/Input/Input'
 
 const AddHerbForm = ({ addHerb }) => {
   const initHerb = {
