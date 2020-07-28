@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
 import Link from 'components/Link/Link'
+import api from 'utils/api'
 
 import HerbTable from '../../tables/HerbTable'
 import AddHerbForm from '../../forms/AddHerbForm'
@@ -15,19 +16,8 @@ const Herbs = () => {
   const [editing, setEditing] = useState(false)
   const [herbs, setHerbs] = useState([])
 
-  React.useEffect(() => {
-    axios
-      .get(BASE_URL, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem('token')}`,
-          'Content-Type': 'application/json',
-        },
-      })
-      .then((result) => {
-        if (result.status === 200) {
-          setHerbs(result.data)
-        }
-      })
+  useEffect(() => {
+    api.get(BASE_URL).then(setHerbs)
   }, [])
 
   const addHerb = (herb) => {

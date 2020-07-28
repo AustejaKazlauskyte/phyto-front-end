@@ -1,5 +1,12 @@
 import React from 'react'
 
 import AboutForm from 'containers/AboutForm/AboutForm'
+import ContentFrame from 'components/ContentFrame/ContentFrame'
 
-export default () => <AboutForm />
+const About = () => (
+  <ContentFrame>
+    <AboutForm />
+  </ContentFrame>
+)
+
+export default About

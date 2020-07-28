@@ -1,6 +1,5 @@
 import React from 'react'
 
-import ContentFrame from 'components/ContentFrame/ContentFrame'
 import Paragraph from 'components/Paragraph/Paragraph'
 import Title from 'components/Title/Title'
 
@@ -11,10 +10,10 @@ const text = `Phyto yra didžiausia Lietuvoje vaistažolių duomenų bazė, turi
               metu yra privati.`
 
 const AboutForm = () => (
-  <ContentFrame>
+  <>
     <Title>{title}</Title>
     <Paragraph>{text}</Paragraph>
-  </ContentFrame>
+  </>
 )
 
 export default AboutForm

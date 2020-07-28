@@ -8,7 +8,7 @@ const ContentFrame = ({ children }) => (
 )
 
 ContentFrame.propTypes = {
-  children: PropTypes.elementType.isRequired,
+  children: PropTypes.node.isRequired,
 }
 
 export default ContentFrame

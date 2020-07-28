@@ -3,7 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 
 import MainMenu from 'containers/MainMenu/MainMenu'
 import Routes from 'containers/Routes/Routes'
-import { AuthProvider } from 'hooks/Auth/Auth'
+import { AuthProvider } from 'hooks/useAuth'
 
 import './App.css'
 

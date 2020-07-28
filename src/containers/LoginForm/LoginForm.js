@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 
-import { useAuth } from 'hooks/Auth/Auth'
+import { useAuth } from 'hooks/useAuth'
 import Button from 'components/Button/Button'
 import Input from 'components/Input/Input'
 

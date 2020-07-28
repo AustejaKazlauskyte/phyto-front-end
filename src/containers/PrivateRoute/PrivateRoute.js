@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Redirect, Route } from 'react-router-dom'
 
-import { useAuth } from 'hooks/Auth/Auth'
+import { useAuth } from 'hooks/useAuth'
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const { isAuthenticated } = useAuth()

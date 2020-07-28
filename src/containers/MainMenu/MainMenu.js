@@ -7,7 +7,7 @@ import {
   ROUTE_LOGIN,
   ROUTE_SIGN_UP,
 } from 'containers/Routes/Routes'
-import { useAuth } from 'hooks/Auth/Auth'
+import { useAuth } from 'hooks/useAuth'
 
 const menuItems = [
   {
