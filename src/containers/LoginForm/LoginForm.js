@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Redirect, useLocation, useRouteMatch } from 'react-router-dom'
 import axios from 'axios'
 
 import { useAuth } from 'hooks/useAuth'
@@ -11,6 +11,12 @@ function LoginForm() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const { isAuthenticated, setToken } = useAuth()
+
+  const location = useLocation()
+  const match = useRouteMatch()
+
+  console.log(location)
+  console.log(match)
 
   const login = (event) => {
     event.preventDefault()

@@ -1,21 +1,40 @@
-/*
-import React, { useState, useEffect } from 'react';
+import axios from 'axios'
 
+const BASE_URL = 'http://localhost:8080/api'
 
-function PostRequestHooks() {
-    const [postId, setPostId] = useState(null);
+const get = (url) => fetch(axios.get, url)
 
-    useEffect(() => {
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            /!*body: JSON.stringify({ title: 'Random text' }*!/
-        };
-        fetch('http://localhost:8080/api/herbs', requestOptions)
-            .then(response => response.json())
-            .then(data => setPostId(data.id));
-    }, []);
+const post = (url, data) => fetch(axios.post, url, data)
+
+const put = (url, data) => fetch(axios.put, url, data)
+
+const del = (url) => fetch(axios.delete, url)
+
+const getHeaders = () => ({
+  headers: {
+    Authorization: `Bearer ${localStorage.getItem('token')}`,
+    'Content-Type': 'application/json',
+  },
+})
+
+const fetch = (fn, url, data) => {
+  const fullUrl = BASE_URL + url
+  const response = data
+    ? fn(fullUrl, data, getHeaders())
+    : fn(fullUrl, getHeaders())
+
+  return new Promise((resolve, reject) =>
+    response
+      .then(({ data: payload }) => {
+        resolve(payload)
+      })
+      .catch((error) => {
+        if (error.response.status === 403) {
+          // window.history.pushState('/login', '')
+        }
+        reject(error)
+      }),
+  )
 }
 
-export { PostRequestHooks };
-*/
+export default { get, post, put, del }

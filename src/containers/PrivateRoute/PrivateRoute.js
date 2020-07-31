@@ -1,21 +1,28 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Redirect, Route } from 'react-router-dom'
+import { Redirect, Route, useLocation } from 'react-router-dom'
 
 import { useAuth } from 'hooks/useAuth'
+import { ROUTE_LOGIN } from 'containers/Routes/constants'
 
-const PrivateRoute = ({ component: Component, ...rest }) => {
+const PrivateRoute = ({ children, ...other }) => {
   const { isAuthenticated } = useAuth()
+  const location = useLocation()
 
   return (
     <Route
-      {...rest}
-      render={(props) =>
+      {...other}
+      render={() =>
         isAuthenticated() ? (
-          <Component {...props} />
+          <>{children}</>
         ) : (
           <Redirect
-            to={{ pathname: '/login' /* , state: { referer: props.location */ }}
+            to={{
+              pathname: ROUTE_LOGIN,
+              state: {
+                referer: location.pathname,
+              },
+            }}
           />
         )
       }
@@ -24,7 +31,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 }
 
 PrivateRoute.propTypes = {
-  component: PropTypes.elementType.isRequired,
+  children: PropTypes.node,
 }
 
 export default PrivateRoute

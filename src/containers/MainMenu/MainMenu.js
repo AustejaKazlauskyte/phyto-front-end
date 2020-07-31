@@ -6,7 +6,7 @@ import {
   ROUTE_HERBS,
   ROUTE_LOGIN,
   ROUTE_SIGN_UP,
-} from 'containers/Routes/Routes'
+} from 'containers/Routes/constants'
 import { useAuth } from 'hooks/useAuth'
 
 const menuItems = [

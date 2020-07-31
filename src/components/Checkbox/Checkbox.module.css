@@ -10,6 +10,7 @@
 
 .checkbox {
   content: '';
+  cursor: pointer;
   display: block;
   margin-right: 1em;
   width: 26px;
