@@ -1,5 +1,0 @@
-export const ROUTE_ABOUT = '/about'
-export const ROUTE_HERBS = '/herbs'
-export const ROUTE_LOGIN = '/login'
-export const ROUTE_LOGOUT = '/logout'
-export const ROUTE_SIGN_UP = '/sign-up'
