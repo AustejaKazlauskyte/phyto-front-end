@@ -1,7 +1,13 @@
 import React from 'react';
+import styled from 'styled-components';
 
-const Text = () => (
-    <h1>Ok</h1>
+const Title = styled.h1`
+  background-color: wheat;
+  color: red;
+`
+
+const Text = (): JSX.Element => (
+    <Title>Ok</Title>
 );
 
 export default Text;
