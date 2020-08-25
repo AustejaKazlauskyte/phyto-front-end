@@ -18,6 +18,9 @@
     "typescript": "3.7.2"
   },
   "devDependencies": {
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-prettier": "3.1.4",
+    "prettier": "2.1.0",
     "stylelint": "13.6.1",
     "stylelint-config-recommended": "3.0.0",
     "stylelint-config-styled-components": "0.1.1",
@@ -25,6 +28,7 @@
     "stylelint-processor-styled-components": "1.10.0"
   },
   "scripts": {
+    "format-code": "prettier \"./**/*.{ts,tsx}\" --write",
     "lint": "npm run lint:ts && npm run lint:styles",
     "lint:ts": "eslint \"./**/*.{ts,tsx}\" --format stylish --fix",
     "lint:styles": "stylelint \"./**/*.{ts,tsx}\"",
