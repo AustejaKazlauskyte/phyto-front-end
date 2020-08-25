@@ -2,6 +2,31 @@
   "name": "phyto-fe",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "format-code": "prettier \"./**/*.{ts,tsx}\" --write",
+    "lint": "npm run lint:ts && npm run lint:styles",
+    "lint:ts": "eslint \"./**/*.{ts,tsx}\" --format stylish --fix",
+    "lint:styles": "stylelint \"./**/*.{ts,tsx}\"",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "post-applypatch": "check-dependencies --install",
+      "post-merge": "check-dependencies --install"
+    }
+  },
+  "lint-staged": {
+    "*.{tsx,ts}": [
+      "eslint --format stylish --fix",
+      "stylelint",
+      "prettier --write",
+      "git add"
+    ]
+  },
   "dependencies": {
     "@testing-library/jest-dom": "4.2.4",
     "@testing-library/react": "9.3.2",
@@ -20,22 +45,14 @@
   "devDependencies": {
     "eslint-config-prettier": "6.11.0",
     "eslint-plugin-prettier": "3.1.4",
+    "husky": "4.2.5",
+    "lint-staged": "10.2.13",
     "prettier": "2.1.0",
     "stylelint": "13.6.1",
     "stylelint-config-recommended": "3.0.0",
     "stylelint-config-styled-components": "0.1.1",
     "stylelint-order": "4.1.0",
     "stylelint-processor-styled-components": "1.10.0"
-  },
-  "scripts": {
-    "format-code": "prettier \"./**/*.{ts,tsx}\" --write",
-    "lint": "npm run lint:ts && npm run lint:styles",
-    "lint:ts": "eslint \"./**/*.{ts,tsx}\" --format stylish --fix",
-    "lint:styles": "stylelint \"./**/*.{ts,tsx}\"",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
