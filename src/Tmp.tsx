@@ -2,7 +2,7 @@ import React from 'react'
 
 const Tmp = () => (
     <div>
-    <span>aa</span>
+<span>aa</span>
     </div>
 )
 
